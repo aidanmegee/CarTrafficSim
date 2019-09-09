@@ -1,3 +1,5 @@
+package Simulation;
+
 public class Car {
 
     int positionOnRoad = 0; //index 0 for car position start
@@ -5,11 +7,7 @@ public class Car {
     String vehicle = "Car";
     String road1 = "Road 1";
     String road2 = "Road 2";
-    boolean carMoving = false;
-
-    public Car() {
-
-    }
+    private boolean carMoving = false;
 
     /*setters and getters for car class*/
 
@@ -57,12 +55,22 @@ public class Car {
         return this.carMoving;
     }
 
-    public void carLocation(String road1, String road2, int positionOnRoad, int roadLength, boolean carMoving) {
+    public void carPosition(String road1, String road2, String vehicle, int positionOnRoad, int roadLength, boolean carMoving) {
         this.road1 = road1;
         this.road2 = road2;
+        this.vehicle = vehicle;
         this.positionOnRoad = positionOnRoad;
         this.roadLength = roadLength;
         this.carMoving = carMoving;
+
+        positionOnRoad = 0; //initial position on road
+        System.out.println(vehicle + " is positioned at " + road1 + " on segment " + positionOnRoad);
+        if(!carMoving) { //checks if carMoving is not false
+            ++positionOnRoad; //increment position on road
+            System.out.println(vehicle + " is now positioned at " + road1 + " on segment " + positionOnRoad); //prints new position on road
+        }
+
+
 
 
     }
