@@ -58,8 +58,13 @@ public class Car {
         System.out.println(vehicle + " is positioned at " + road1 + " on segment " + positionOnRoad);
         if(!carMoving) { //checks if carMoving is not false
             ++positionOnRoad; //increment position on road
-            System.out.println(vehicle + " is now positioned at " + road1 + " on segment " + positionOnRoad); //prints new position on road
+            System.out.println(vehicle + " is now positioned at " + road1 + " on segment " + positionOnRoad);//prints new position on road
         }
+        else if (positionOnRoad == 5) {
+            System.out.println(vehicle + " is now positioned at " + road2 + " on segment " + positionOnRoad);
+        }
+
+
 
 
 
