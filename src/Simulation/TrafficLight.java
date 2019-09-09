@@ -1,14 +1,29 @@
 package Simulation;
 
-public class TrafficLight extends Road {
+import java.util.Random;
 
+public class TrafficLight extends Road { //Traffic light class extends Road class
+
+    double maxRateOfChange = 0.99; //set values for traffic light class
+    double minRateOfChange = 0.01;
     String colourGreen = "Green";
     String colourRed = "Red";
-    final double maxRateOfChange = 0.99; //if random number between max and min rateofchange is less than 0.3 or 30%
-    final double minRateOfChange = 0.01; //traffic light changes from green to red or red to green
 
 
-    public String getColourGreen() {
+    public void RateOfChange() { //determines the rate of change for traffic light from 1% to 99%
+        Random random = new Random();
+        double maxRateOfChange = 0.99;
+        double minRateOfChange = 0.01;
+        double result = minRateOfChange + (maxRateOfChange - minRateOfChange) + random.nextDouble();
+        if (result <= 0.3) { //if number generated is less than 0.3, change colour
+            System.out.println("Traffic light has changed to " + colourRed);
+        }
+        else {
+            System.out.println("Traffic light is green " + colourGreen);
+        }
+    }
+    /*setters and getter methods for Traffic Light class */
+    public String getColourGreen(String colourGreen) {
         return colourGreen;
     }
 
@@ -16,7 +31,7 @@ public class TrafficLight extends Road {
         this.colourGreen = colourGreen;
     }
 
-    public String getColourRed() {
+    public String getColourRed(String colourRed) {
         return colourRed;
     }
 
@@ -24,11 +39,12 @@ public class TrafficLight extends Road {
         this.colourRed = colourRed;
     }
 
-    public double getMaxRateOfChange() {
-        return maxRateOfChange;
+    public void getMaxRateOfChange(double v) {
+        //if random number between max and min rateofchange is less than 0.3 or 30%
+        double maxRateOfChange = 0.99;
     }
 
-    public double getMinRateOfChange() {
-        return minRateOfChange;
+    public void getMinRateOfChange(double v) {
+        double minRateOfChange = 0.01;
     }
 }

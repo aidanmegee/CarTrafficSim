@@ -6,9 +6,10 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class RoadTest {
 
-    Road road = new Road();
+
     @Test
     void roadTest() { //test for road length in Road Class
+        Road road = new Road();
         road.setRoadLength(5);
         road.getRoadLength(5);
         assertEquals(1, road.roadLength());

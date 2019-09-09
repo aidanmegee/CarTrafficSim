@@ -1,6 +1,6 @@
 package Simulation;
 
-public class Road extends Car {
+public class Road extends Car { //Road class extends Car class
 
     int roadLength = 5; //index 0 to 4
 
@@ -14,7 +14,7 @@ public class Road extends Car {
     }
 
 
-    /*get and set road length*/
+    /*get and set road length for Road class*/
     public void getRoadLength(int i) {
     }
 

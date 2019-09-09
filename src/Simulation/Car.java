@@ -1,6 +1,6 @@
 package Simulation;
 
-public class Car {
+public class Car { //Car class
 
     int positionOnRoad = 0; //index 0 for car position start
     String vehicle = "Car";
