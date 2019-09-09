@@ -2,7 +2,17 @@ package Simulation;
 
 public class Road extends Car {
 
-    private int roadLength;
+    int roadLength = 5; //index 0 to 4
+
+    public Road() { //Road method for determing which road car is on
+        this.road1 = road1;
+        this.road2 = road2;
+        if (positionOnRoad == 5) { //if vehicle is at segment 5 on road, vehicle moves to road 2
+            this.road1 = this.road2;
+            System.out.println("Car is now travelling on " + road2 + " at segment" + positionOnRoad);
+        }
+    }
+
 
     /*get and set road length*/
     public void getRoadLength(int i) {
@@ -13,23 +23,15 @@ public class Road extends Car {
         this.roadLength = roadLength;
     }
 
-    public int roadLength() {
+    public int roadLength() { //road length method for length of road
         int roadLength = 5;
         this.roadLength = roadLength;
         roadLength = String.valueOf(5).length(); //road length is 0, 1, 2, 3, 4
-        return roadLength;
-    }
-    public Road(String road1, String road2) {
-        this.road1 = road1;
-        this.road2 = road2;
-        if (positionOnRoad == 5) {
-            this.road1 = this.road2;
-            System.out.println("Car is now travelling on " + road2);
-        }
-
+        return roadLength; //returns road length
     }
 
-    @Override
+
+    @Override /*Override annotations from Car class */
     public int getPositionOnRoad() {
         return super.getPositionOnRoad();
     }
