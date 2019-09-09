@@ -3,7 +3,6 @@ package Simulation;
 public class Car {
 
     int positionOnRoad = 0; //index 0 for car position start
-    int roadLength = String.valueOf(10).length();
     String vehicle = "Car";
     String road1 = "Road 1";
     String road2 = "Road 2";
@@ -13,10 +12,6 @@ public class Car {
 
     public int getPositionOnRoad() {
         return positionOnRoad;
-    }
-
-    public int getRoadLength() {
-        return roadLength;
     }
 
     public String getVehicle() {
@@ -43,9 +38,6 @@ public class Car {
         this.road2 = road2;
     }
 
-    public void setRoadLength(int roadLength) {
-        this.roadLength = roadLength;
-    }
 
     public void setPositionOnRoad(int positionOnRoad) {
         this.positionOnRoad = positionOnRoad;
@@ -55,12 +47,11 @@ public class Car {
         return this.carMoving;
     }
 
-    public void carPosition(String road1, String road2, String vehicle, int positionOnRoad, int roadLength, boolean carMoving) {
+    public void carPosition(String road1, String road2, String vehicle, int positionOnRoad, boolean carMoving) {
         this.road1 = road1;
         this.road2 = road2;
         this.vehicle = vehicle;
         this.positionOnRoad = positionOnRoad;
-        this.roadLength = roadLength;
         this.carMoving = carMoving;
 
         positionOnRoad = 0; //initial position on road
