@@ -7,16 +7,19 @@ class CarTest {
     @Test
     void carTest() {
         Car car = new Car();
-        car.setPositionOnRoad(0);
+        car.setPositionOnRoad(0); //Tests setters and getters for car class
         car.setRoadLength(10);
+        car.setVehicle("Car");
         car.setRoad1("Road 1");
         car.setRoad2("Road 2");
         assertEquals(0, car.positionOnRoad);
         assertEquals(10, car.roadLength);
+        assertEquals("Car", car.vehicle);
         assertEquals("Road 1", car.road1);
         assertEquals("Road 2", car.road2);
         assertEquals(0, car.getPositionOnRoad());
         assertEquals(10, car.getRoadLength());
+        assertEquals("Car", car.getVehicle());
         assertEquals("Road 1", car.getRoad1());
         assertEquals("Road 2", car.getRoad2());
     }
