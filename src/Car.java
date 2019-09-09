@@ -27,7 +27,7 @@ public class Car {
         this.road1 = road1;
     }
 
-    public void setRoad2() {
+    public void setRoad2(String road2) {
         this.road2 = road2;
     }
 
