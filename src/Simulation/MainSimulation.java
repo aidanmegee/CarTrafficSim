@@ -44,6 +44,8 @@ public class MainSimulation extends Car   { //main simulation class
                     System.out.println(vehicle + " is now travelling on " + road2 + " at segment " + positionOnRoad);
                 }
                 else if (positionOnRoad == 4 && result <= 0.3) {
+                    System.out.println(vehicle + " Stopping at " + colourRed + " Light ");
+                    positionOnRoad = 4;
 
                 }
         }
