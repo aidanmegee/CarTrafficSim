@@ -6,6 +6,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class CarTest {
 
+
+
     @Test
     void carTest() {
         Car car = new Car();
@@ -24,5 +26,24 @@ class CarTest {
     }
 
 
+    @Test
+    void carMove() { //tests method to change car position from 0 to 1
+        Car car = new Car();
+        assertEquals("Road 1", car.road1);
+        assertEquals("Road 2", car.road2);
+        assertEquals("Car", car.vehicle);
+        assertEquals(1, 1, car.positionOnRoad);
+        assertFalse(car.carMoving);
 
+
+    }
+
+    @Test
+    void isCarMoving() { //test if car moving is true
+        Car car = new Car();
+        car.isCarMoving(false);
+        assertFalse(false);
+        assertTrue(true);
+
+    }
 }

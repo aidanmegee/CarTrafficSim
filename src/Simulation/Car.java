@@ -6,7 +6,7 @@ public class Car { //Car class
     String vehicle = "Car";
     String road1 = "Road 1";
     String road2 = "Road 2";
-    private boolean carMoving = false;
+    public boolean carMoving = false; //sets vehicle to not moving at first
 
     /*setters and getters for car class*/
 
@@ -43,11 +43,12 @@ public class Car { //Car class
         this.positionOnRoad = positionOnRoad;
     }
 
-    private boolean isCarMoving() { //check if car is moving
-        return this.carMoving;
+    public boolean isCarMoving(boolean b) { //check if car is moving
+        return isCarMoving(false);
     }
 
-    public void carPosition(String road1, String road2, String vehicle, int positionOnRoad, boolean carMoving) {
+
+    public void carMove(String road1, String road2, String vehicle, int positionOnRoad, boolean carMoving) {
         this.road1 = road1;
         this.road2 = road2;
         this.vehicle = vehicle;
@@ -57,11 +58,11 @@ public class Car { //Car class
         positionOnRoad = 0; //initial position on road
         System.out.println(vehicle + " is positioned at " + road1 + " on segment " + positionOnRoad);
         if(!carMoving) { //checks if carMoving is not false
-            ++positionOnRoad; //increment position on road
             System.out.println(vehicle + " is now positioned at " + road1 + " on segment " + positionOnRoad);//prints new position on road
+            ++positionOnRoad; //increment position on road
         }
-        else if (positionOnRoad == 5) {
-            System.out.println(vehicle + " is now positioned at " + road2 + " on segment " + positionOnRoad);
+        if (positionOnRoad == 5) {
+            System.out.println(vehicle + " is now positioned at " + road2 + " on segment " + positionOnRoad); //if vehicle is at position 5, move to next road
         }
 
 

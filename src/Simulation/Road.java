@@ -13,6 +13,12 @@ public class Road extends Car { //Road class extends Car class
         }
     }
 
+    public int roadLength() { //road length method for length of road
+        int roadLength = 5;
+        this.roadLength = roadLength;
+        positionOnRoad = String.valueOf(roadLength).length(); //road length is 0, 1, 2, 3, 4
+        return roadLength; //returns road length
+    }
 
     /*get and set road length for Road class*/
     public void getRoadLength(int i) {
@@ -23,12 +29,6 @@ public class Road extends Car { //Road class extends Car class
         this.roadLength = roadLength;
     }
 
-    public int roadLength() { //road length method for length of road
-        int roadLength = 5;
-        this.roadLength = roadLength;
-        roadLength = String.valueOf(5).length(); //road length is 0, 1, 2, 3, 4
-        return roadLength; //returns road length
-    }
 
 
     @Override /*Override annotations from Car class */
