@@ -2,55 +2,48 @@ package Simulation;
 
 import java.util.Random;
 
-public class MainSimulation extends Car   { //main simulation
+public class MainSimulation extends Car   { //main simulation class
 
 
-    public void trafficLightOperates() {
+    public static void main(String[] args) {
 
-        double maxRateOfChange = 0.99; //set values for traffic light class
-        double minRateOfChange = 0.01;
-        String colourGreen = "Green"; //green light moves car
-        String colourRed = "Red"; //red light stops car
-
-        Random random = new Random();
-
-        double result = minRateOfChange + (maxRateOfChange - minRateOfChange) + random.nextDouble();
-        if (result <= 0.3) { //if number generated is less than 0.3, change colour
-            System.out.println("Traffic light has changed to " + colourRed);
-        }
-        else {
-            System.out.println("Traffic light has changed to " + colourGreen);
-        }
-    }
-
-    public void Car() {
-
-        int positionOnRoad = 0; //index 0 for car position start
+        /*Car class values*/
+        int positionOnRoad; //index 0 for car position start
         String vehicle = "Car";
         String road1 = "Road 1";
         String road2 = "Road 2";
 
-    }
-    public MainSimulation(String road1, String road2, int positionOnRoad) { //Simulates road for determining which road car is on
-        this.road1 = road1;
-        this.road2 = road2;
-        if (positionOnRoad == 5) { //if vehicle is at segment 5 on road, vehicle moves to road 2
-            this.road1 = this.road2;
-            System.out.println("Car is now travelling on " + road2 + " at segment" + positionOnRoad);
+        /*Traffic Light class values*/
+        double maxRateOfChange = 0.99; //set values for traffic light class
+        double minRateOfChange = 0.01;
+        String colourGreen = "Green";
+        String colourRed = "Red";
+
+        int roadLength = 5; //index 0 to 4
+
+        Car car = new Car();
+
+        positionOnRoad = String.valueOf(roadLength).length(); //road length is 0, 1, 2, 3, 4
+
+        while(positionOnRoad != 4) {
+            System.out.println(vehicle + " is now travelling on " + road1 + " at segment " + positionOnRoad);
+            ++positionOnRoad;
         }
-    }
 
-    public static void main(String[] args) {
+        if (positionOnRoad == 5 ) { //if vehicle is at segment 5 on road, vehicle moves to road 2
+            road1 = road2;
+            System.out.println(vehicle + " is moving from " + road1 + " to " + road2);
+            System.out.println(vehicle + " is now travelling on " + road2 + " at segment" + positionOnRoad);
+        }
 
-
-
-
-
-
-
-
-
-
+        Random random = new Random();
+        double result = random.nextInt((int) (maxRateOfChange - minRateOfChange)) + minRateOfChange;
+        if (result >= 0.3) { //rate determines colour change of traffic light
+            System.out.println("Traffic Light changed from " + colourGreen + " to " + colourRed);
+        }
+        else if (result <= 0.3) {
+            System.out.println("Traffic Light changed from " + colourRed + " to " + colourGreen);
+        }
 
 
     }
