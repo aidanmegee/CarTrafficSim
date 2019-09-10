@@ -27,7 +27,8 @@ public class MainSimulation extends Car { //main simulation class
         positionOnRoad = String.valueOf(roadLength).length(); //road length is 0, 1, 2, 3, 4
         positionOnRoad2 = String.valueOf(roadLength).length();
 
-        while (positionOnRoad < 4) {
+        positionOnRoad = 0;
+        while (positionOnRoad <= 4) {
             System.out.println(vehicle + " is now travelling on : " + road1 + " : " + "segment " + positionOnRoad);
             ++positionOnRoad;
 
@@ -36,35 +37,34 @@ public class MainSimulation extends Car { //main simulation class
             if (result <= 0.3) { //rate determines colour change of traffic light
                 System.out.println("Traffic Light changed from " + colourGreen + " to " + colourRed);
                 if (result <= 0.3) {
-                    System.out.println(" Current traffic light status : " + colourRed);
+                    System.out.println("Current traffic light status : " + colourRed);
                     if (result > 0.3) {
                         System.out.println(" Traffic light changes to " + colourGreen);
                     }
                 }
                 else if (result > 0.3) {
-                    System.out.println(" Current traffic light status : " + colourGreen);
+                    System.out.println("Current traffic light status : " + colourGreen);
                 }
-                else if (positionOnRoad == 4 && result <= 0.3) {
-                    System.out.println(vehicle + " Stopping at " + colourRed + " Light ");
+                else if (positionOnRoad == 5 && result <= 0.3) {
+                    System.out.println(vehicle + "Stopping at " + colourRed + " Light ");
                 }
             }
             else if (result > 0.3) { //if less than 30%, lights stay same colour
                 System.out.println("Traffic Light stays :  " + colourGreen);
                 if (positionOnRoad == 4 && result > 0.3) {
-                    System.out.println(vehicle + " Is moving to " + road2);
-                    ++positionOnRoad;
+                    if (!"Red".equals(colourRed.intern())) {
+                        System.out.println(vehicle + " Is moving to " + road2);
+                        ++positionOnRoad2;
+                    }
                 }
             }
-
         }
-        while (positionOnRoad2 < 4) {
+        positionOnRoad2 = 0;
+        while (positionOnRoad2 <= 4) {
             System.out.println(vehicle + " is now travelling on : " + road2 + " : " + "segment " + positionOnRoad2);
             ++positionOnRoad2;
 
-
-
         }
-
 
     }
 }
