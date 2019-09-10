@@ -33,17 +33,9 @@ class CarTest {
         assertEquals("Road 2", car.road2);
         assertEquals("Car", car.vehicle);
         assertEquals(1, 1, car.positionOnRoad);
-        assertFalse(car.carMoving);
 
 
-    }
-
-    @Test
-    void isCarMoving() { //test if car moving is true
-        Car car = new Car();
-        car.isCarMoving(false);
-        assertFalse(false);
-        assertTrue(true);
 
     }
+
 }

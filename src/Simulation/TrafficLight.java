@@ -23,7 +23,7 @@ public class TrafficLight extends Road { //Traffic light class extends Road clas
         }
     }
     /*setters and getter methods for Traffic Light class */
-    public String getColourGreen(String colourGreen) {
+    public String getColourGreen(String green) {
         return colourGreen;
     }
 
@@ -31,7 +31,7 @@ public class TrafficLight extends Road { //Traffic light class extends Road clas
         this.colourGreen = colourGreen;
     }
 
-    public String getColourRed(String colourRed) {
+    public String getColourRed(String red) {
         return colourRed;
     }
 

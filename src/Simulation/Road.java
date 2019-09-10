@@ -21,7 +21,8 @@ public class Road extends Car { //Road class extends Car class
     }
 
     /*get and set road length for Road class*/
-    public void getRoadLength(int i) {
+    public int getRoadLength(int i) {
+        return roadLength();
     }
 
 
