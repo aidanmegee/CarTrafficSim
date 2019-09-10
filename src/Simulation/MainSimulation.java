@@ -13,11 +13,6 @@ public class MainSimulation extends Car   { //main simulation class
         String road1 = "Road 1";
         String road2 = "Road 2";
 
-        /*Traffic Light class values*/
-        double maxRateOfChange = 0.99; //set values for traffic light class
-        double minRateOfChange = 0.01;
-        String colourGreen = "Green";
-        String colourRed = "Red";
 
         int roadLength = 5; //index 0 to 4
 
@@ -25,7 +20,7 @@ public class MainSimulation extends Car   { //main simulation class
 
         positionOnRoad = String.valueOf(roadLength).length(); //road length is 0, 1, 2, 3, 4
 
-        while(positionOnRoad != 4) {
+        while(positionOnRoad < 4) {
             System.out.println(vehicle + " is now travelling on " + road1 + " at segment " + positionOnRoad);
             ++positionOnRoad;
         }
@@ -36,8 +31,14 @@ public class MainSimulation extends Car   { //main simulation class
             System.out.println(vehicle + " is now travelling on " + road2 + " at segment" + positionOnRoad);
         }
 
+        /*Traffic Light class values*/
+        double maxRateOfChange = 0.99; //set values for traffic light class
+        double minRateOfChange = 0.01;
+        String colourGreen = "Green";
+        String colourRed = "Red";
+
         Random random = new Random();
-        double result = random.nextInt((int) (maxRateOfChange - minRateOfChange)) + minRateOfChange;
+        double result = minRateOfChange + (maxRateOfChange - minRateOfChange) * random.nextDouble();
         if (result >= 0.3) { //rate determines colour change of traffic light
             System.out.println("Traffic Light changed from " + colourGreen + " to " + colourRed);
         }
