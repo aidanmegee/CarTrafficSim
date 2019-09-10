@@ -31,7 +31,6 @@ public class Road extends Car { //Road class extends Car class
     }
 
 
-
     @Override /*Override annotations from Car class */
     public int getPositionOnRoad() {
         return super.getPositionOnRoad();

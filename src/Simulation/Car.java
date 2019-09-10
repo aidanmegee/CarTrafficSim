@@ -51,7 +51,7 @@ public class Car { //Car class
 
         positionOnRoad = 0; //initial position on road
         System.out.println(vehicle + " is positioned at " + road1 + " on segment " + positionOnRoad);
-        if(positionOnRoad < 4) {
+        if (positionOnRoad < 4) {
             System.out.println(vehicle + " is now positioned at " + road1 + " on segment " + positionOnRoad);//prints new position on road
             ++positionOnRoad; //increment position on road
         }
@@ -60,14 +60,7 @@ public class Car { //Car class
         }
 
 
-
-
-
-
     }
-
-
-
 
 
 }

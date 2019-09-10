@@ -17,11 +17,11 @@ public class TrafficLight extends Road { //Traffic light class extends Road clas
         double result = minRateOfChange + (maxRateOfChange - minRateOfChange) + random.nextDouble();
         if (result <= 0.3) { //if number generated is less than 0.3, change colour
             System.out.println("Traffic light has changed to " + colourRed);
-        }
-        else {
+        } else {
             System.out.println("Traffic light is green " + colourGreen);
         }
     }
+
     /*setters and getter methods for Traffic Light class */
     public String getColourGreen(String green) {
         return colourGreen;

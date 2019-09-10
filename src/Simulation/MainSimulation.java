@@ -2,7 +2,7 @@ package Simulation;
 
 import java.util.Random;
 
-public class MainSimulation extends Car   { //main simulation class
+public class MainSimulation extends Car { //main simulation class
 
 
     public static void main(String[] args) {
@@ -23,36 +23,39 @@ public class MainSimulation extends Car   { //main simulation class
         String colourRed = "Red";
 
 
-
         positionOnRoad = String.valueOf(roadLength).length(); //road length is 0, 1, 2, 3, 4
 
-        while(positionOnRoad < 4) {
-            System.out.println(vehicle + " is now travelling on " + road1 + " at segment " + positionOnRoad);
+        while (positionOnRoad < 4) {
+            System.out.println(vehicle + " is now travelling on : " + road1 + " : " + "segment " + positionOnRoad);
             ++positionOnRoad;
+
             Random random = new Random();
             double result = minRateOfChange + (maxRateOfChange - minRateOfChange) * random.nextDouble();
             if (result <= 0.3) { //rate determines colour change of traffic light
                 System.out.println("Traffic Light changed from " + colourGreen + " to " + colourRed);
-            }
-            else if (result > 0.3) { //if less than 30%, lights stay same colour
-                System.out.println("Traffic Light stays " + colourGreen);
-            }
-                if (positionOnRoad == 4 && result > 0.3) { //if vehicle is at segment 5 on road, vehicle moves to road 2
-                    road1 = road2;
-                    positionOnRoad = 0;
-                    System.out.println(vehicle + " is moving from Road 1 " + " to " + road2);
-                    System.out.println(vehicle + " is now travelling on " + road2 + " at segment " + positionOnRoad);
+                if(result <= 0.3) {
+                    System.out.println(vehicle + " Current traffic light status : " + colourRed);
                 }
-                else if (positionOnRoad == 4 && result <= 0.3) {
+            } else if (result > 0.3) { //if less than 30%, lights stay same colour
+                System.out.println("Traffic Light stays :  " + colourGreen);
+
+                if (positionOnRoad == 4 && result > 0.3) { //if vehicle is at segment 4 on road, vehicle moves to road 2
+                    road1 = road2; //car transfers to road2
+                    positionOnRoad = 0; //resets position on road
+                    System.out.println(vehicle + " is moving from Road 1 " + " to " + road2);
+                }
+                if (positionOnRoad == 4 && result <= 0.3) {
+                    road2 = road1;
                     System.out.println(vehicle + " Stopping at " + colourRed + " Light ");
                     positionOnRoad = 4;
 
+
                 }
+            }
         }
 
-
-
     }
-
-
 }
+
+
+
