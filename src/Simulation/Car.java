@@ -42,10 +42,9 @@ public class Car { //Car class
 
 
     public void carMove(Road road1, Road road2, int positionOnRoad) {
+        this.positionOnRoad = positionOnRoad;
         this.road1 = road1;
         this.road2 = road2;
-        this.positionOnRoad = positionOnRoad;
-
 
 
 
