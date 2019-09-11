@@ -14,6 +14,10 @@ class RoadTest {
         assertEquals(1, road.getRoadId());
     }
 
-
-
+    @Test
+    void roadChange() {
+        Road road = new Road(1);
+        road.roadChange();
+        assertEquals(2, road.getRoadId());
+    }
 }

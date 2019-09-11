@@ -9,6 +9,15 @@ public class Road { //Road class extends Car class
         this.roadId = roadId;
 
     }
+    public void roadChange() {
+        while (roadId < 3) {
+            roadId = roadId + 1;
+            if(roadId == 2) {
+                break;
+            }
+        }
+    }
+
     /*setters and getters for Road class*/
     public int getRoadLength() {
         return roadLength;

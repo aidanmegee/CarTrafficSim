@@ -8,6 +8,7 @@ public class TrafficLight { //Traffic Light class
     private boolean[] array = {true, false};
     private String currentState; //set light to green first, changes based on rate
 
+
     public void operate() { //determines the rate of change for traffic light from 1% to 99%
         Random random = new Random();
         double result = random.nextDouble();
@@ -28,7 +29,6 @@ public class TrafficLight { //Traffic Light class
     public String[] getMyStringArray() {
         return myStringArray;
     }
-
 
     public boolean[] getArray() {
         return array;
