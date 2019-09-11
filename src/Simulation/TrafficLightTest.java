@@ -18,9 +18,19 @@ class TrafficLightTest {
     @Test
     void operate() { //tests for change in traffic light colour based on random double from 0.0 to 1.0
         TrafficLight trafficLight = new TrafficLight();
+        // change from green to red
+        //put in while loop
         boolean[] array = trafficLight.getArray();
-        assertTrue(array[0]);
-        assertFalse(array[1]);
+        boolean change = false;
+        while (!change)  {
+            trafficLight.operate();
+            if (array[1]) {
+                change = true;
+            }
+        }
+
+        assertFalse(array[0]);
+
 
 
 
