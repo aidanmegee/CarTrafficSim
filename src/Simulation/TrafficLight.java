@@ -1,50 +1,52 @@
 package Simulation;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
 import java.util.Random;
 
-public class TrafficLight extends Road { //Traffic light class extends Road class
+public class TrafficLight { //Traffic Light class
 
-    double maxRateOfChange = 0.99; //set values for traffic light class
-    double minRateOfChange = 0.01;
-    String colourGreen = "Green";
-    String colourRed = "Red";
+    private String[] myStringArray = {"Green", "Red"};
+    private boolean [] array = new boolean[2];
+    private boolean currentState = false;
 
-
-    public void RateOfChange() { //determines the rate of change for traffic light from 1% to 99%
+    public void operate() { //determines the rate of change for traffic light from 1% to 99%
         Random random = new Random();
-        double maxRateOfChange = 0.99;
-        double minRateOfChange = 0.01;
-        double result = minRateOfChange + (maxRateOfChange - minRateOfChange) + random.nextDouble();
+        double result = random.nextDouble();
         if (result <= 0.3) { //if number generated is less than 0.3, change colour
-            System.out.println("Traffic light has changed to " + colourRed);
-        } else {
-            System.out.println("Traffic light is green " + colourGreen);
+            System.out.println("Traffic light has changed to " + Arrays.toString(myStringArray));
+        }
+        else {
+            System.out.println("Traffic light is stays " + Arrays.toString(myStringArray));
         }
     }
 
+
+    /*Setters and getter methods for fields in Traffic Light class*/
+    public String[] getMyStringArray() {
+        return myStringArray;
+    }
+
+    public void setMyStringArray(String[] myStringArray) {
+        this.myStringArray = myStringArray;
+    }
+
+    public boolean[] getArray() {
+        return array;
+    }
+
+    public void setArray(boolean[] array) {
+        this.array = array;
+    }
+
+    public boolean isCurrentState() {
+        return currentState;
+    }
+
+    public void setCurrentState(boolean currentState) {
+        this.currentState = currentState;
+    }
+
     /*setters and getter methods for Traffic Light class */
-    public String getColourGreen(String green) {
-        return colourGreen;
-    }
 
-    public void setColourGreen(String colourGreen) {
-        this.colourGreen = colourGreen;
-    }
-
-    public String getColourRed(String red) {
-        return colourRed;
-    }
-
-    public void setColourRed(String colourRed) {
-        this.colourRed = colourRed;
-    }
-
-    public void getMaxRateOfChange(double v) {
-        //if random number between max and min rateofchange is less than 0.3 or 30%
-        double maxRateOfChange = 0.99;
-    }
-
-    public void getMinRateOfChange(double v) {
-        double minRateOfChange = 0.01;
-    }
 }
