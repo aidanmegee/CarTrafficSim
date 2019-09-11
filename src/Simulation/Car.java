@@ -47,8 +47,9 @@ public class Car { //Car class
         this.road2 = road2;
 
 
-
+        while (positionOnRoad > 4) {
+            ++positionOnRoad;
+        }
     }
-
 
 }

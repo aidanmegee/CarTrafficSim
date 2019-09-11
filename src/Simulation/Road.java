@@ -2,19 +2,17 @@ package Simulation;
 
 public class Road { //Road class extends Car class
 
-    private int roadLength = 5; //index 0 to 4
+    private int roadLength; //index 0 to 4
+    private Car car;
 
-    public Road(int roadLength) { //constructor for Road class
+    public Road(int roadLength, Car car) { //constructor for Road class
         this.roadLength = roadLength;
-        Road road1 = new Road(roadLength);
-        Road road2 = new Road(roadLength);
+        this.car = car;
     }
 
 
 
     public int roadLength() { //road length method for length of road
-        int roadLength = 5;
-        this.roadLength = roadLength;
         roadLength = String.valueOf(roadLength).length(); //road length is 0, 1, 2, 3, 4
         return roadLength; //returns road length
     }
