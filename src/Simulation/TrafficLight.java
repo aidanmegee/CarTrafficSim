@@ -13,11 +13,11 @@ public class TrafficLight { //Traffic Light class
         Random random = new Random();
         double result = random.nextDouble();
         if (result <= 0.3) { //if number generated is less than 0.3, change colour
-            if (array[0]) {
+            if (array[0]) { //changes array values for traffic light colour
                 array[0] = false;
                 array[1] = true;
                 currentState = myStringArray[1];
-            } else {
+            } else { //reverse changes to array values for traffic light colour
                 array[1] = false;
                 array[0] = true;
                 currentState = myStringArray[0];
