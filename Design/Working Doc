@@ -14,3 +14,11 @@ After the Road and Car class were completed along with their test code. I then w
 Implementing Main Simulation Class:
 After completing all three out of four classes needed for the project along with the test code. I started on the MainSimulation Class of my project which is where everything is simulated. I started to write out main() and using a while loop so the car keeps increments by 1 each time the car position is less than 4. When the Car is at position 4 on road 1, the car would then move to road 2 but the car can only move to road 2 If the traffic light is green, this is where problems started to occur. I was unable to use Boolean values here, so I had to find a way to make the car move if the Traffic Lights are NOT red. Currently still having issues with the Car moving to Road 2 even if the Traffic Light is red. 
 After the Car moves to the second road, I implemented another while loop and another position on road value so I could track the car on the second road for readability purposes.
+
+Problem correction:
+After coming to the realisation I had created a procedural program instead of using objects in this project. 
+I had to go back and redesign my classes and unit tests so that methods could be called back into the main simulation,
+after some changes to my sub-classes for this project, I started to implement these methods by calling them in main when needed.
+Currently the lights stay red and will have to change based on the operate() method in the
+Traffic Light class, to fix this, the currentstate of the traffic lights will have to be
+changed in order to create a simulation of traffic lights.
