@@ -11,6 +11,19 @@ Going into writing the program for the Car Traffic Simulator, I decided to work 
 Creating the Sub-Classes:
 After the Road and Car class were completed along with their test code. I then went on to complete the Traffic Light class. I started to run into some issues here and had trouble with figuring out how to write the code. I tried using Boolean values for green and red, although this didn’t work out so well because when printing whether the traffic light was red or green it would print true or false which isn’t helpful in this project. I then decided to use Strings and set the colour green/colour red to “Green” and “Red” which made a huge difference. The rate of change for the Traffic Light class was also a bit of a struggle, I knew how I wanted to write it using a random number generated between two values, in this case 0.01 and 0.99 although I wasn’t sure of the syntax. After some research going through coding resources on learnJCU I found out how I wanted to write the code for this random number generator in a way I could understand, and it worked exactly how I wanted it to. I then proceeded to write test code for the Traffic Light class to test the String values and Min and Max Rate of Change. 
 
+Classes:
+*TrafficLight
+*Car
+*Road
+*MainSimulation
+
+Every class except MainSimulation has unit testing to check that methods work correctly
+operate() method in Traffic Light class operates the traffic lights determing colour
+carMove() method in the Car class increments the cars position on road.
+roadChange() method in the Road class moves the car from road 1 to road 2 by incrementing the roadID
+
+
+
 Implementing Main Simulation Class:
 After completing all three out of four classes needed for the project along with the test code. I started on the MainSimulation Class of my project which is where everything is simulated. I started to write out main() and using a while loop so the car keeps increments by 1 each time the car position is less than 4. When the Car is at position 4 on road 1, the car would then move to road 2 but the car can only move to road 2 If the traffic light is green, this is where problems started to occur. I was unable to use Boolean values here, so I had to find a way to make the car move if the Traffic Lights are NOT red. Currently still having issues with the Car moving to Road 2 even if the Traffic Light is red. 
 After the Car moves to the second road, I implemented another while loop and another position on road value so I could track the car on the second road for readability purposes.
