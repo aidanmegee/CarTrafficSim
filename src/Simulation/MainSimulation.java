@@ -24,21 +24,24 @@ public class MainSimulation { //main simulation class
                     if (array[1]) {
                         change = true;
                         System.out.println("Traffic lights are : " + trafficLight.getCurrentState());
+                        trafficLight.operate();
                         if (array[0]) {
                             change = false;
                             System.out.println("Traffic lights are : " + trafficLight.getCurrentState());
                             road.roadChange();
-                            System.out.println("Car " + car.getId() + " is now on road : " + road.getRoadId() + " on segment " + car.getPositionOnRoad());
-                        }
+                            if (road.getRoadId() == 2) {
+                                System.out.println("Car " + car.getId() + " is now on road : " + road.getRoadId() + " on segment " + car.getPositionOnRoad());
+                            }
 
+                        }
                     }
+
                 }
 
             }
 
+
         }
-
-
     }
 
 

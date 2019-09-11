@@ -10,7 +10,7 @@ public class Road { //Road class extends Car class
 
     }
     public void roadChange() {
-        while (roadId < 3) {
+        while (roadId < 2) {
             roadId = roadId + 1;
             if(roadId == 2) {
                 break;
