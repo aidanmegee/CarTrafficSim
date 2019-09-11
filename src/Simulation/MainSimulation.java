@@ -12,10 +12,10 @@ public class MainSimulation { //main simulation class
         Road road = new Road(1);
         TrafficLight trafficLight = new TrafficLight();
 
-        while (car.getPositionOnRoad() < 4) {
+        while (car.getPositionOnRoad() < 4 && road.getRoadId() <= 2) {
             car.carMove();
             System.out.println("Car " + car.getId() + " is on road : " + road.getRoadId() + " on segment " + car.getPositionOnRoad());
-            if (car.getPositionOnRoad() == 4 && car.getId() == 1) {
+            if (car.getPositionOnRoad() == 4 && road.getRoadId() == 1) {
                 trafficLight.operate();
                 boolean[] array = trafficLight.getArray();
                 boolean change = false;
@@ -31,6 +31,7 @@ public class MainSimulation { //main simulation class
                             road.roadChange();
                             if (road.getRoadId() == 2) {
                                 System.out.println("Car " + car.getId() + " is now on road : " + road.getRoadId() + " on segment " + car.getPositionOnRoad());
+                                return;
                             }
 
                         }
