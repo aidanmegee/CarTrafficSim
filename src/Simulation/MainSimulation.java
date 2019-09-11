@@ -14,30 +14,32 @@ public class MainSimulation { //main simulation class
 
         while (car.getPositionOnRoad() < 4) {
             car.carMove();
-            System.out.println("Car " + car.getId() + " is on road : " + +road.getRoadId() + " on segment " + car.getPositionOnRoad());
-            while (car.getPositionOnRoad() == 4) {
+            System.out.println("Car " + car.getId() + " is on road : " + road.getRoadId() + " on segment " + car.getPositionOnRoad());
+            if (car.getPositionOnRoad() == 4 && car.getId() == 1) {
+                trafficLight.operate();
                 boolean[] array = trafficLight.getArray();
                 boolean change = false;
                 while (!change) {
                     trafficLight.operate();
                     if (array[1]) {
                         change = true;
-                        System.out.println("Traffic lights are " + trafficLight.getCurrentState());
-                        System.out.println("Car " + car.getId() + " is staying on road : " + road.getRoadId() + " on segment " + car.getPositionOnRoad());
-                    }
-                        while (change = true)
-                        trafficLight.operate();
+                        System.out.println("Traffic lights are : " + trafficLight.getCurrentState());
                         if (array[0]) {
-                            change = true;
+                            change = false;
+                            System.out.println("Traffic lights are : " + trafficLight.getCurrentState());
                             road.roadChange();
-                            System.out.println("Car" + car.getId() + " is moving to road : " + road.getRoadId() + " on segment " + car.getPositionOnRoad());
+                            System.out.println("Car " + car.getId() + " is now on road : " + road.getRoadId() + " on segment " + car.getPositionOnRoad());
                         }
 
-
+                    }
                 }
 
             }
 
         }
+
+
     }
+
+
 }
