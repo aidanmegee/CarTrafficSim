@@ -12,7 +12,6 @@ class RoadTest {
         Road road = new Road(1);
         assertEquals(5, road.getRoadLength());
         assertEquals(1, road.getRoadId());
-
     }
 
 

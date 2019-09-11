@@ -8,36 +8,23 @@ class TrafficLightTest {
 
 
     @Test
-    void trafficLightTest() {
+    void trafficLightTest() { //test for colour of lights in array
         TrafficLight trafficLight = new TrafficLight();
-        trafficLight.getColourGreen("Green");
-        trafficLight.getColourRed("Red");
-        trafficLight.getMaxRateOfChange(0.99);
-        trafficLight.getMinRateOfChange(0.01);
-
-
+        String[] array = trafficLight.getMyStringArray();
+        assertEquals("Green", array[0]);
+        assertEquals("Red", array[1]);
     }
 
     @Test
-    void setColourGreen() {
+    void operate() { //tests for change in traffic light colour based on random double from 0.0 to 1.0
         TrafficLight trafficLight = new TrafficLight();
-        assertEquals("Green", trafficLight.colourGreen);
+        boolean[] array = trafficLight.getArray();
+        assertTrue(array[0]);
+        assertFalse(array[1]);
+
+
+
+
+
     }
-
-    @Test
-    void setColourRed() {
-        TrafficLight trafficLight = new TrafficLight();
-        assertEquals("Red", trafficLight.colourRed);
-    }
-
-    @Test
-    void rateOfChange() {
-        TrafficLight trafficLight = new TrafficLight();
-        trafficLight.getMaxRateOfChange(0.99);
-        trafficLight.getMinRateOfChange(0.01);
-        assertEquals(0.99, trafficLight.maxRateOfChange);
-        assertEquals(0.01, trafficLight.minRateOfChange);
-    }
-
-
 }
