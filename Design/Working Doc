@@ -35,3 +35,7 @@ after some changes to my sub-classes for this project, I started to implement th
 Currently the lights stay red and will have to change based on the operate() method in the
 Traffic Light class, to fix this, the currentstate of the traffic lights will have to be
 changed in order to create a simulation of traffic lights.
+
+***FIXED 12/09/2019 - Car moves to road 2 if light is green, although program ends if traffic lights are red
+to fix this, a loop to constantly call the operate() method in main each time the light is red until the light
+changes colour to green so the car can move to the second road.
