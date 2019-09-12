@@ -17,12 +17,18 @@ public class MainSimulation { //main simulation class
             trafficLight.operate();
             System.out.println("Car " + car.getId() + " is on road : " + road.getRoadId() + " on segment " + car.getPositionOnRoad() + " Traffic Lights are : " + trafficLight.getCurrentState());
             if (car.getPositionOnRoad() == 4 && road.getRoadId() == 1) {
-                while (!trafficLight.getCurrentState().equals("Green") && car.getPositionOnRoad() == 4 && road.getRoadId() == 1) {
+                while (!trafficLight.getCurrentState().equals("Red") && car.getPositionOnRoad() == 4 && road.getRoadId() == 1) {
                     trafficLight.operate();
-                    if (!trafficLight.getCurrentState().equals("Red")) {
+                    if (trafficLight.getCurrentState().equals("Green")) {
                         road.roadChange();
                         car.setPositionOnRoad(0);
                         System.out.println("Car " + car.getId() + " is now travelling on road : " + road.getRoadId() + " on segment " + car.getPositionOnRoad());
+
+                        if (trafficLight.getCurrentState().equals("Red") && car.getPositionOnRoad() == 4 && road.getRoadId() == 1) {
+                            trafficLight.operate();
+                            System.out.println("Car " + car.getId() + " is currently stopped at a " + trafficLight.getCurrentState() + " light");
+
+                        }
                     }
 
                     boolean[] array = trafficLight.getArray();
@@ -40,10 +46,6 @@ public class MainSimulation { //main simulation class
                                 //while loop to call operate() function so traffic lights keeps trying to change if lights are red
 
                             }
-                        }
-                        if (road.getRoadId() == 2) { //checks if roadID is 2
-                            car.setPositionOnRoad(0);
-                            System.out.println("Car " + car.getId() + " is now on road : " + road.getRoadId() + " on segment " + car.getPositionOnRoad());
                         }
 
                     }
