@@ -11,6 +11,8 @@ class CarTest {
     @Test
     void carTest() { //Car class test for road objects and getters
         Car car = new Car(1);
+        car.setPositionOnRoad(0);
+        car.setId(1);
         assertEquals(0, car.getPositionOnRoad());
         assertEquals(1, car.getId());
 

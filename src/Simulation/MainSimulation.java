@@ -14,6 +14,7 @@ public class MainSimulation { //main simulation class
 
         while (car.getPositionOnRoad() < 4 && road.getRoadId() <= 2) {
             car.carMove();
+            trafficLight.operate();
             System.out.println("Car " + car.getId() + " is on road : " + road.getRoadId() + " on segment " + car.getPositionOnRoad());
             if (car.getPositionOnRoad() == 4 && road.getRoadId() == 1) {
                 trafficLight.operate();
@@ -30,8 +31,8 @@ public class MainSimulation { //main simulation class
                             System.out.println("Traffic lights are : " + trafficLight.getCurrentState());
                             road.roadChange(); //changes road if traffic lights are green
                             if (road.getRoadId() == 2) { //checks if roadID is 2
+                                car.setPositionOnRoad(0);
                                 System.out.println("Car " + car.getId() + " is now on road : " + road.getRoadId() + " on segment " + car.getPositionOnRoad());
-                                return;
                             }
 
                         }
@@ -41,6 +42,11 @@ public class MainSimulation { //main simulation class
 
             }
 
+
+        }
+        while (car.getPositionOnRoad() < 4 && road.getRoadId() == 2) {
+            car.carMove();
+            System.out.println("Car " + car.getId() + " is on road : " + road.getRoadId() + " on segment " + car.getPositionOnRoad());
 
         }
     }

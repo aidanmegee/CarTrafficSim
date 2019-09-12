@@ -18,6 +18,9 @@ public class Car { //Car class
     public int getId() {
         return id;
     }
+    public void setPositionOnRoad(int positionOnRoad) {
+        this.positionOnRoad = positionOnRoad;
+    }
 
     public void setId(int id) {
         this.id = id;
