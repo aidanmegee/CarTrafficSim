@@ -10,6 +10,7 @@ public class TrafficLight { //Traffic Light class
 
 
     public void operate() { //determines the rate of change for traffic light from 1% to 99%
+        currentState = myStringArray[0];
         Random random = new Random();
         double result = random.nextDouble();
         if (result <= 0.3) { //if number generated is less than 0.3, change colour
