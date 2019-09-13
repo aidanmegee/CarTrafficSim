@@ -19,7 +19,7 @@ public class MainSimulation { //main simulation class
             if (car.getPositionOnRoad() == 4 && road.getRoadId() == 1) {
                 while (!trafficLight.getCurrentState().equals("Red") && car.getPositionOnRoad() == 4 && road.getRoadId() == 1) {
                     trafficLight.operate();
-                    if (trafficLight.getCurrentState().equals("Green")) {
+                    if (trafficLight.getCurrentState().equals("Red")) {
                         road.roadChange();
                         car.setPositionOnRoad(0);
                         System.out.println("Car " + car.getId() + " is now travelling on road : " + road.getRoadId() + " on segment " + car.getPositionOnRoad());
@@ -52,14 +52,14 @@ public class MainSimulation { //main simulation class
 
                 }
             }
+            while (car.getPositionOnRoad() < 4 && road.getRoadId() == 2) {
+                car.carMove();
+                System.out.println("Car " + car.getId() + " is on road : " + road.getRoadId() + " on segment " + car.getPositionOnRoad());
 
+            }
 
         }
-        while (car.getPositionOnRoad() < 4 && road.getRoadId() == 2) {
-            car.carMove();
-            System.out.println("Car " + car.getId() + " is on road : " + road.getRoadId() + " on segment " + car.getPositionOnRoad());
 
-        }
     }
 
 
