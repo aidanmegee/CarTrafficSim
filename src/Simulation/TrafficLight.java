@@ -8,6 +8,12 @@ public class TrafficLight { //Traffic Light class
     private boolean[] array = {true, false};
     private String currentState; //set light to green first, changes based on rate
 
+    public TrafficLight(String[] myStringArray, boolean[] array, String currentState) {
+        this.myStringArray = myStringArray;
+        this.array = array;
+        this.currentState = currentState;
+    }
+
 
     public void operate() { //determines the rate of change for traffic light from 1% to 99%
         currentState = myStringArray[0];
