@@ -39,3 +39,9 @@ changed in order to create a simulation of traffic lights.
 ***FIXED 12/09/2019 - Car moves to road 2 if light is green, although program ends if traffic lights are red
 to fix this, a loop to constantly call the operate() method in main each time the light is red until the light
 changes colour to green so the car can move to the second road.
+
+Added code so that traffic lights don't operate when car moves to road 2.
+Added an else if statement for traffic light current state so car moves to road 2 if green
+
+Issue:
+Program ends if traffic light is red on road 1 position 4.
