@@ -48,5 +48,7 @@ changes colour to green so the car can move to the second road.
 Added code so that traffic lights don't operate when car moves to road 2.
 Added an else if statement for traffic light current state so car moves to road 2 if green
 
-Issue:
+Issue: ***FIXED 13/09/2019
 Program ends if traffic light is red on road 1 position 4.
+Program outputs "Car is stopped at red light" if lights are red when car is at position 4 on road 1.
+Program continues to call the operate() method from the Traffic Light class until lights change.
