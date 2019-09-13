@@ -8,26 +8,31 @@ public class MainSimulation { //main simulation class
 
     public static void main(String[] args) {
 
+        /*create new objects for simulation */
         Car car = new Car(1);
         Road road = new Road(1);
         TrafficLight trafficLight = new TrafficLight();
 
+        //main loop for simulation
         while (car.getPositionOnRoad() < 4 && road.getRoadId() <= 2) {
-            car.carMove();
-            trafficLight.operate();
+            car.carMove(); //calls car move method from car class
+            trafficLight.operate(); //calls operate method from traffic light class
             System.out.println("Car " + car.getId() + " is on road : " + road.getRoadId() + " on segment " + car.getPositionOnRoad() + " Traffic Lights are : " + trafficLight.getCurrentState());
             if (car.getPositionOnRoad() == 4 && road.getRoadId() == 1) {
                 while (!trafficLight.getCurrentState().equals("Red") && car.getPositionOnRoad() == 4 && road.getRoadId() == 1) {
-                    trafficLight.operate();
-                    if (trafficLight.getCurrentState().equals("Red")) {
-                        road.roadChange();
-                        car.setPositionOnRoad(0);
-                        System.out.println("Car " + car.getId() + " is now travelling on road : " + road.getRoadId() + " on segment " + car.getPositionOnRoad());
+                    road.roadChange();
+                    car.setPositionOnRoad(0);
+                    System.out.println("Car " + car.getId() + " is now travelling on road : " + road.getRoadId() + " on segment " + car.getPositionOnRoad());
 
+                    if (trafficLight.getCurrentState().equals("Red") && car.getPositionOnRoad() == 4) {
+                        System.out.println("Car " + car.getId() + " is currently stopped at a " + trafficLight.getCurrentState() + " light");
+                        trafficLight.operate(); //operates lights if current state is red and position is 4
                         if (trafficLight.getCurrentState().equals("Red") && car.getPositionOnRoad() == 4 && road.getRoadId() == 1) {
                             trafficLight.operate();
-                            System.out.println("Car " + car.getId() + " is currently stopped at a " + trafficLight.getCurrentState() + " light");
-
+                        } else if (trafficLight.getCurrentState().equals("Green") && car.getPositionOnRoad() == 4) {
+                            road.roadChange();
+                            car.setPositionOnRoad(0);
+                            System.out.println("Car " + car.getId() + " is now travelling on road : " + road.getRoadId() + " on segment " + car.getPositionOnRoad());
                         }
                     }
 
@@ -52,7 +57,7 @@ public class MainSimulation { //main simulation class
 
                 }
             }
-            while (car.getPositionOnRoad() < 4 && road.getRoadId() == 2) {
+            while (car.getPositionOnRoad() < 4 && road.getRoadId() == 2) { //Car moves while on road 2 without traffic light on road 2
                 car.carMove();
                 System.out.println("Car " + car.getId() + " is on road : " + road.getRoadId() + " on segment " + car.getPositionOnRoad());
 
