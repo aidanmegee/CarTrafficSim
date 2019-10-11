@@ -112,6 +112,9 @@ Removed all code from Traffic light class due to previously having a boolean arr
 was extremely unreadable and a bad coding practice. Starting from scratch I will use enums to check the colour of the traffic lights
 then determine if vehicles will move to connected roads after traffic lights are green or stay on a road if they're orange/red.
 
+Added enum for traffic light class for traffic light state to stay green and red for 1000 milliseconds and orange for 500 milliseconds
+using Thread.sleep. Currently still need to test if operate() method works as intended. Set a currentState variable to start
+off as green then change based on a timer in future.
 
 
 

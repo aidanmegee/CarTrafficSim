@@ -60,6 +60,10 @@ public class Road { //Road class
         return roadNumber;
     }
 
+    public ArrayList<Vehicle> getCurrentVehicles() {
+        return currentVehicles;
+    }
+
     public void setRoadLength(int roadLength) {
         this.roadLength = roadLength;
     }

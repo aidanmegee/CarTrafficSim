@@ -8,27 +8,31 @@ public class TrafficLight { //Traffic Light class
     public int lightPositionOnRoad;
     public ArrayList<Road> roads = new ArrayList<>();
 
-    public enum trafficLightState {
-        GREEN,
-        ORANGE,
-        RED,
+    public enum trafficLightState {RED, ORANGE, GREEN} //index 0-Red, 1-Orange, 2-Green
+    trafficLightState currentState = trafficLightState.GREEN;
+
+    public TrafficLight(int lightPositionOnRoad) {
+        this.lightPositionOnRoad = lightPositionOnRoad;
     }
 
-    public void operate() {
-        Random random = new Random();
-        float lightChange = random.nextFloat();
-        if (lightChange <= 0.3) {
-            //set trafficlight state to different enum
+    public void operate() throws InterruptedException { //operates the traffic lights, determines if vehicle changes road based on traffic light state
+        switch (this.currentState) {
+            case RED:
+                System.out.println("Traffic Lights are Red");
+                Thread.sleep(1000);
+                this.currentState = trafficLightState.GREEN;
+                break;
+            case GREEN:
+                System.out.println("Traffic Lights are Green");
+                Thread.sleep(500);
+                this.currentState = trafficLightState.ORANGE;
+                break;
+            case ORANGE:
+                System.out.println("Traffic Lights are Orange");
+                Thread.sleep(1000);
+                this.currentState = trafficLightState.RED;
+                break;
         }
-//        switch (lightChange) {
-//            case 1:
-//                //if lightChange is less than 0.3 change from green to orange
-//                break;
-//            case 2:
-//                //if lightchange is greater than 0.3 change from red to green
-//                break;
-//
-//        }
     }
 
 
@@ -48,6 +52,17 @@ public class TrafficLight { //Traffic Light class
 
     /*Setters and getter methods for fields in Traffic Light class*/
 
+    public int getLightPositionOnRoad() {
+        return lightPositionOnRoad;
+    }
+
+    public ArrayList<Road> getRoads() {
+        return roads;
+    }
+
+    public void setLightPositionOnRoad(int lightPositionOnRoad) {
+        this.lightPositionOnRoad = lightPositionOnRoad;
+    }
 
 }
 

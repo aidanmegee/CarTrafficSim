@@ -12,6 +12,8 @@ class RoadTest {
     @Test
     void roadTest() {
         Road road = new Road(0, 30);
+        ArrayList<Vehicle> currentVehicles = new ArrayList<>();
+        currentVehicles.add(new Car(1, 1, 1, 2));
         road.setRoadNumber(1);
         road.setRoadLength(10);
         assertEquals(1, road.getRoadNumber());
