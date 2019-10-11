@@ -86,3 +86,9 @@ Remove vehicle test because it is now abstract, instead created tests for each o
 Made Vehicle class abstract so subclasses (Car, Motorbike and Bus) extends the abstract Vehicle class. Removed vehicle test
 and test each sub class of vehicle works accordingly. Add test for all 3 subclasses of Vehicle and test different vehicleLengths
 for each different "Vehicle type" so to speak.
+
+Made vehicleLength abstract then set each subclass of vehicle length to its correct length respectively (motorbike is 0.5 * car length)
+and (bus is 3 * car length). Converted vehicleLength and also had to convert vehicleBreadth to float to accommodate 0.5 * car length for the motorbike subclass.
+
+
+
