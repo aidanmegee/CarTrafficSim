@@ -4,15 +4,15 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class CarTest {
+class VehicleTest {
 
 
 
     @Test
     void carTest() { //Car class test for road objects and getters
         Car car = new Car(1);
-        car.setPositionOnRoad(0);
-        car.setId(1);
+        car.setPositionOnRoad(4);
+        car.setId(2);
         assertEquals(0, car.getPositionOnRoad());
         assertEquals(1, car.getId());
 

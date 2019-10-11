@@ -52,3 +52,23 @@ Issue: ***FIXED 13/09/2019
 Program ends if traffic light is red on road 1 position 4.
 Program outputs "Car is stopped at red light" if lights are red when car is at position 4 on road 1.
 Program continues to call the operate() method from the Traffic Light class until lights change.
+
+------------------------------------------------------------------------------------------------------------------------
+
+Assignment 2 - Problems - Start 11/10/2019
+
+- Fix UML to match future code/end project
+- Test all getter/setter combinations using values different to the constructor values
+- Apply better consistency of white spacing
+- Add more descriptive names to the variables
+- Change traffic light double to a float
+- Change traffic light class to use enums instead of boolean array
+- Main Simulation held majority of the class logic
+- Road "has a" Car ad the road or car class "moves" the car
+
+Problem fixes starting from the top.
+
+Fix tests for each class to properly test getter/setter combinations are working how intended.
+
+Begin to change the Car class to make the car class to handle more of the logic that the Car on a "Road" should
+be responsible for. Throughout assignment 1, I put a lot of the Car's logic in main.

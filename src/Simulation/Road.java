@@ -31,7 +31,6 @@ public class Road { //Road class extends Car class
         this.roadId = roadId;
     }
 
-
     public void setRoadLength(int roadLength) {
         this.roadLength = roadLength;
     }
