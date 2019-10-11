@@ -39,6 +39,15 @@ class RoadTest {
 
     @Test
     void moveVehicle() {
+        Road road = new Road(1, 10);
+        ArrayList<Vehicle> currentVehicles = new ArrayList<>();
+        currentVehicles.add(new Car(3, 1, 1, 2));
+        for (Vehicle vehicle : currentVehicles) {
+            if (vehicle.getPositionOnRoad() < road.getRoadLength()) {
+                vehicle.setPositionOnRoad(vehicle.getPositionOnRoad() + vehicle.getSpeed());
+            }
+            System.out.println(currentVehicles + "position: " + vehicle.getPositionOnRoad() + " speed: " + vehicle.getSpeed());
+        }
 
     }
 }

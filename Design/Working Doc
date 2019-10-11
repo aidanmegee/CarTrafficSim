@@ -99,7 +99,11 @@ then if the position is less than the road length, the vehicle moves along the r
 removeVehicle() method to be added to remove vehicle after it reaches the end of a certain road object. Then move the vehicle to another
 road object in an ArrayList of road objects.
 
+Add test for Road class to test random vehicle object (Car, bus or motorbike) to be added to the ArrayList of vehicle objects.
+checked the getter and setter methods are working as intended using different values then the constructor.
 
+Add test to check that the moveVehicle() method changes the vehicles position if the position is less than the road length and
+the speed is at least 1.
 
 
 

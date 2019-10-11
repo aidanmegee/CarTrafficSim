@@ -1,5 +1,7 @@
 package Simulation;
 
+import java.util.ArrayList;
+
 public abstract class Vehicle { //Car class
 
     //variables for Vehicle class inherited by it's sub classes Car, Motorbike and Bus
@@ -8,6 +10,7 @@ public abstract class Vehicle { //Car class
     private int id;
     public float vehicleLength;
     private float vehicleBreadth;
+    ArrayList<Road> roads = new ArrayList<>();
 
     /**
      * Instantiates a new Vehicle
@@ -22,6 +25,10 @@ public abstract class Vehicle { //Car class
         this.positionOnRoad = positionOnRoad;
         this.id = id;
         this.vehicleBreadth = vehicleBreadth;
+    }
+
+    public void changeRoad() {
+
     }
 
     /*setters and getters for car class*/

@@ -8,7 +8,7 @@ public class Road { //Road class
     //Road class variables
     private int roadLength;
     private int roadNumber;
-    ArrayList<Vehicle> currentVehicles = new ArrayList<Vehicle>();
+    ArrayList<Vehicle> currentVehicles = new ArrayList<>();
 
     /**
      * @param roadNumber which road the vehicle is travelling on
@@ -46,7 +46,7 @@ public class Road { //Road class
     public void removeVehicle() {
         for (Vehicle vehicle : currentVehicles) {
             if (vehicle.getPositionOnRoad() == getRoadLength()) {
-
+                //removes vehicle from road if the vehicles position is equal to the road length
             }
         }
     }
