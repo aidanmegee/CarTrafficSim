@@ -2,27 +2,25 @@ package Simulation;
 
 public abstract class Vehicle { //Car class
 
-    //int speed variable to get user input "Scanner speed = new Scanner()" to determine if vehicle goes from segment 1-2 or segment 1-4 etc
+    //variables for Vehicle class inherited by it's sub classes Car, Motorbike and Bus
     private int speed;
     private int positionOnRoad; //index 0 for car position start
     private int id;
-    private int vehicleLength;
-    private int vehicleBreadth;
-    //array for vehicle types??
+    public float vehicleLength;
+    private float vehicleBreadth;
+
     /**
      * Instantiates a new Vehicle
      *
      * @param speed          the speed
      * @param positionOnRoad the position on the road
      * @param id             the vehicle id
-     * @param vehicleLength  the vehicle length
      * @param vehicleBreadth the vehicle breadth - Half of its length
      */
-    public Vehicle(int speed, int positionOnRoad, int id, int vehicleLength, int vehicleBreadth) {
+    public Vehicle(int speed, int positionOnRoad, int id, float vehicleBreadth) {
         this.speed = speed;
         this.positionOnRoad = positionOnRoad;
         this.id = id;
-        this.vehicleLength = vehicleLength;
         this.vehicleBreadth = vehicleBreadth;
     }
 
@@ -39,11 +37,11 @@ public abstract class Vehicle { //Car class
         return id;
     }
 
-    public int getVehicleLength() {
+    public float getVehicleLength() {
         return vehicleLength;
     }
 
-    public int getVehicleBreadth() {
+    public float getVehicleBreadth() {
         return vehicleBreadth;
     }
 
@@ -59,11 +57,9 @@ public abstract class Vehicle { //Car class
         this.id = id;
     }
 
-    public void setVehicleLength(int vehicleLength) {
-        this.vehicleLength = vehicleLength;
-    }
+    public abstract void setVehicleLength(float vehicleLength);
 
-    public void setVehicleBreadth(int vehicleBreadth) {
+    public void setVehicleBreadth(float vehicleBreadth) {
         this.vehicleBreadth = vehicleBreadth;
     }
 
