@@ -1,18 +1,41 @@
 package Simulation;
 
+import java.util.ArrayList;
+import java.util.Random;
+
 public class Road { //Road class extends Car class
 
-    private int roadLength = 5; //index 0 to 4
-    private int roadId = 1;
+    //Road class variables
+    private int roadLength;
+    private int roadNumber;
+    private ArrayList<Vehicle> currentVehicles = new ArrayList<Vehicle>();
 
-    public Road(int roadId) { //constructor for Road class
-        this.roadId = roadId;
-
+    //Constructor for Road class
+    public Road(int roadNumber, int roadLength) {
+        this.roadNumber = roadNumber;
+        this.roadLength = roadLength;
     }
+
+    public void addVehicle() {
+        Random random = new Random();
+        int randomVehicle  = random.nextInt(2);
+        switch (randomVehicle) {
+            case 0:
+                currentVehicles.add(new Car(0, 0, 1, 2));
+                break;
+            case 1:
+                currentVehicles.add(new Motorbike(0, 0, 2, 2));
+                break;
+            case 2:
+                currentVehicles.add(new Bus(0, 0, 3, 2));
+                break;
+        }
+    }
+
     public void roadChange() {
-        while (roadId < 2) {
-            roadId = roadId + 1;
-            if(roadId == 2) {
+        while (roadNumber < 2) {
+            roadNumber = roadNumber + 1;
+            if (roadNumber == 2) {
                 break;
             }
         }
@@ -23,17 +46,16 @@ public class Road { //Road class extends Car class
         return roadLength;
     }
 
-    public int getRoadId() {
-        return roadId;
-    }
-
-    public void setRoadId(int roadId) {
-        this.roadId = roadId;
+    public int getRoadNumber() {
+        return roadNumber;
     }
 
     public void setRoadLength(int roadLength) {
         this.roadLength = roadLength;
     }
 
+    public void setRoadNumber(int roadNumber) {
+        this.roadNumber = roadNumber;
+    }
 
 }
