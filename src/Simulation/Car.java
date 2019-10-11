@@ -14,7 +14,6 @@ public class Car extends Vehicle {
      */
     public Car(int speed, int positionOnRoad, int id, float vehicleBreadth) {
         super(speed, positionOnRoad, id, vehicleBreadth);
-
     }
 
     @Override

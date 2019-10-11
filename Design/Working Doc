@@ -90,5 +90,8 @@ for each different "Vehicle type" so to speak.
 Made vehicleLength abstract then set each subclass of vehicle length to its correct length respectively (motorbike is 0.5 * car length)
 and (bus is 3 * car length). Converted vehicleLength and also had to convert vehicleBreadth to float to accommodate 0.5 * car length for the motorbike subclass.
 
+Road Class now has addVehicle() method that adds a random vehicle object index 0, 1, 2 using a switch function that then adds that to the arrayList of
+vehicle objects
+
 
 
