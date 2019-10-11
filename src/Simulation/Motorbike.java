@@ -1,6 +1,7 @@
 package Simulation;
 
 public class Motorbike extends Vehicle {
+
     /**
      * Instantiates a new Vehicle
      *

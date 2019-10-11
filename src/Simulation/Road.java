@@ -5,7 +5,6 @@ import java.util.Random;
 
 public class Road { //Road class
 
-
     //Road class variables
     private int roadLength;
     private int roadNumber;
@@ -20,7 +19,7 @@ public class Road { //Road class
         this.roadLength = roadLength;
     }
 
-    public void addVehicle() {
+    public void addVehicle() { //adds a random vehicle index 0, 1, 2 to the road
         Random random = new Random();
         int randomVehicle = random.nextInt(2);
         switch (randomVehicle) {
@@ -36,7 +35,7 @@ public class Road { //Road class
         }
     }
 
-    public void moveVehicle() {
+    public void moveVehicle() { //moves vehicle based on the position on a road
         for (Vehicle vehicle : currentVehicles) {
             if (vehicle.getPositionOnRoad() < getRoadLength()) {
                 vehicle.setPositionOnRoad(vehicle.getPositionOnRoad() + vehicle.getSpeed());
@@ -44,11 +43,10 @@ public class Road { //Road class
         }
     }
 
-    public void roadChange() {
-        while (roadNumber < 2) {
-            roadNumber = roadNumber + 1;
-            if (roadNumber == 2) {
-                break;
+    public void removeVehicle() {
+        for (Vehicle vehicle : currentVehicles) {
+            if (vehicle.getPositionOnRoad() == getRoadLength()) {
+
             }
         }
     }

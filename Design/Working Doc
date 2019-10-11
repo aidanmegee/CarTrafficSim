@@ -91,7 +91,17 @@ Made vehicleLength abstract then set each subclass of vehicle length to its corr
 and (bus is 3 * car length). Converted vehicleLength and also had to convert vehicleBreadth to float to accommodate 0.5 * car length for the motorbike subclass.
 
 Road Class now has addVehicle() method that adds a random vehicle object index 0, 1, 2 using a switch function that then adds that to the arrayList of
-vehicle objects
+vehicle objects.
+
+Added moveVehicle() method that uses a for each loop to iterate through the vehicle ArrayList and gets the position of each vehicle,
+then if the position is less than the road length, the vehicle moves along the road based on the speed in which the vehicle is travelling.
+
+removeVehicle() method to be added to remove vehicle after it reaches the end of a certain road object. Then move the vehicle to another
+road object in an ArrayList of road objects.
+
+
+
+
 
 
 

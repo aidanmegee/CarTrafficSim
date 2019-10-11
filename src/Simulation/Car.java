@@ -3,7 +3,6 @@ package Simulation;
 public class Car extends Vehicle {
 
     //car graphics draw in Car class
-
     /**
      * Instantiates a new Car
      *
