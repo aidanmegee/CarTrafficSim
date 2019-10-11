@@ -1,46 +1,53 @@
 package Simulation;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 public class TrafficLight { //Traffic Light class
 
-    private String[] myStringArray = {"Green", "Red"};
-    private boolean[] array = {true, false};
-    private String currentState; //set light to green first, changes based on rate
+    public int lightPositionOnRoad;
+    public ArrayList<Road> roads = new ArrayList<>();
 
-
-    public void operate() { //determines the rate of change for traffic light from 1% to 99%
-        currentState = myStringArray[0];
-        Random random = new Random();
-        double result = random.nextDouble();
-        if (result <= 0.3) { //if number generated is less than 0.3, change colour
-            if (array[0]) { //changes array values for traffic light colour
-                array[0] = false;
-                array[1] = true;
-                currentState = myStringArray[1];
-            } else { //reverse changes to array values for traffic light colour
-                array[1] = false;
-                array[0] = true;
-                currentState = myStringArray[0];
-            }
-        }
+    public enum trafficLightState {
+        GREEN,
+        ORANGE,
+        RED,
     }
+
+    public void operate() {
+        Random random = new Random();
+        float lightChange = random.nextFloat();
+        if (lightChange <= 0.3) {
+            //set trafficlight state to different enum
+        }
+//        switch (lightChange) {
+//            case 1:
+//                //if lightChange is less than 0.3 change from green to orange
+//                break;
+//            case 2:
+//                //if lightchange is greater than 0.3 change from red to green
+//                break;
+//
+//        }
+    }
+
+
+//    public void changeRoad() {
+//        Road connectingRoad = new Road(1, 30); //instantiates new road to connect to
+//        for (Road road : roads) {
+//            if (getPositionOnRoad() == road.getRoadLength()) {
+//                //check for traffic lights ****
+//                roads.add(connectingRoad);
+//                //eventually check if no roads are added to end of 1st road, removeVehicle() method is called
+//                road.setRoadNumber(1);
+//                road.setRoadLength(30);
+//                setPositionOnRoad(0);
+//            }
+//        }
+//    }
 
     /*Setters and getter methods for fields in Traffic Light class*/
-    public String[] getMyStringArray() {
-        return myStringArray;
-    }
 
-    public boolean[] getArray() {
-        return array;
-    }
-
-    public String getCurrentState() {
-        return currentState;
-    }
-
-    public void setCurrentState(String currentState) {
-        this.currentState = currentState;
-    }
 
 }
+

@@ -10,7 +10,6 @@ public abstract class Vehicle { //Car class
     private int id;
     public float vehicleLength;
     private float vehicleBreadth;
-    public ArrayList<Road> roads = new ArrayList<>();
 
     /**
      * Instantiates a new Vehicle
@@ -25,16 +24,6 @@ public abstract class Vehicle { //Car class
         this.positionOnRoad = positionOnRoad;
         this.id = id;
         this.vehicleBreadth = vehicleBreadth;
-    }
-
-    public void changeRoad() {
-        for (Road road : roads) {
-            if (getPositionOnRoad() == road.getRoadLength()) {
-                road.setRoadNumber(2);
-                setPositionOnRoad(0);
-                road.setRoadLength(30);
-            }
-        }
     }
 
     /*setters and getters for car class*/
