@@ -10,9 +10,8 @@ class VehicleTest {
 
     @Test
     void carTest() { //Car class test for road objects and getters
-        Car car = new Car(1);
-        car.setPositionOnRoad(4);
-        car.setId(2);
+        Vehicle vehicle = new Vehicle(3, 2, 3, 4, 2);
+
         assertEquals(0, car.getPositionOnRoad());
         assertEquals(1, car.getId());
 
