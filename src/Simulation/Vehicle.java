@@ -1,6 +1,6 @@
 package Simulation;
 
-public class Vehicle { //Car class
+public abstract class Vehicle { //Car class
 
     //int speed variable to get user input "Scanner speed = new Scanner()" to determine if vehicle goes from segment 1-2 or segment 1-4 etc
     private int speed;
@@ -9,9 +9,17 @@ public class Vehicle { //Car class
     private int vehicleLength;
     private int vehicleBreadth;
     //array for vehicle types??
-
+    /**
+     * Instantiates a new Vehicle
+     *
+     * @param speed          the speed
+     * @param positionOnRoad the position on the road
+     * @param id             the vehicle id
+     * @param vehicleLength  the vehicle length
+     * @param vehicleBreadth the vehicle breadth - Half of its length
+     */
     public Vehicle(int speed, int positionOnRoad, int id, int vehicleLength, int vehicleBreadth) {
-        this.speed = 0;
+        this.speed = speed;
         this.positionOnRoad = positionOnRoad;
         this.id = id;
         this.vehicleLength = vehicleLength;
@@ -19,7 +27,6 @@ public class Vehicle { //Car class
     }
 
     /*setters and getters for car class*/
-
     public int getSpeed() {
         return speed;
     }
@@ -43,6 +50,7 @@ public class Vehicle { //Car class
     public void setSpeed(int speed) {
         this.speed = speed;
     }
+
     public void setPositionOnRoad(int positionOnRoad) {
         this.positionOnRoad = positionOnRoad;
     }
@@ -58,10 +66,5 @@ public class Vehicle { //Car class
     public void setVehicleBreadth(int vehicleBreadth) {
         this.vehicleBreadth = vehicleBreadth;
     }
-
-    public void vehicleMove() {
-        this.positionOnRoad += 1;
-    }
-
 
 }

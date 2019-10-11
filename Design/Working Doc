@@ -70,5 +70,17 @@ Problem fixes starting from the top.
 
 Fix tests for each class to properly test getter/setter combinations are working how intended.
 
+Vehicle class (Renamed from Car class):
+
 Begin to change the Car class to make the car class to handle more of the logic that the Car on a "Road" should
 be responsible for. Throughout assignment 1, I put a lot of the Car's logic in main.
+
+Renamed Car class to Vehicle class to accommodate for the addition of different vehicles (car, motorbike, bus)
+Added speed, vehicleLength and vehicleBreadth along with getter/setter methods for these variables.
+The plan is to finish the Vehicle class and VehicleTest class before moving on to other classes and their current problems.
+
+Add @param block comment for Vehicle class constructor to give a brief explanation of the variables in that class.
+Move vehicleMove() method to road class for understandability.
+
+Made Vehicle class abstract so subclasses (Car, Motorbike and Bus) extends the abstract Vehicle class. Removed vehicle test
+and test each sub class of vehicle works accordingly.
