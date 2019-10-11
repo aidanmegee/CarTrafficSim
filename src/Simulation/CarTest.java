@@ -19,16 +19,6 @@ class CarTest {
         assertEquals(3, car.getId());
         assertEquals(6, car.getVehicleLength());
         assertEquals(3, car.getVehicleBreadth());
-
     }
-
-//    @Test
-//    void carMove() { //tests method to change car position from 0 to 1
-//        car car = new car(3, 2, 3, 4, 2);
-//        //for loop to call carMove() method each time car is on a road and traffic lights are not red/orange
-//        assertEquals(1, car.getPositionOnRoad());
-//
-//
-//    }
 
 }

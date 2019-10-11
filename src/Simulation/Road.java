@@ -8,7 +8,7 @@ public class Road { //Road class
     //Road class variables
     private int roadLength;
     private int roadNumber;
-    private ArrayList<Vehicle> currentVehicles = new ArrayList<Vehicle>();
+    ArrayList<Vehicle> currentVehicles = new ArrayList<Vehicle>();
 
     /**
      * @param roadNumber which road the vehicle is travelling on
@@ -21,7 +21,7 @@ public class Road { //Road class
 
     public void addVehicle() { //adds a random vehicle index 0, 1, 2 to the road
         Random random = new Random();
-        int randomVehicle = random.nextInt(2);
+        int randomVehicle = random.nextInt(3);
         switch (randomVehicle) {
             case 0:
                 currentVehicles.add(new Car(1, 0, 1, 2));
