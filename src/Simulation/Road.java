@@ -6,9 +6,9 @@ import java.util.Random;
 public class Road { //Road class
 
     //Road class variables
-    private int roadLength;
+    public int roadLength;
     private int roadNumber;
-    ArrayList<Vehicle> currentVehicles = new ArrayList<>();
+    public ArrayList<Vehicle> currentVehicles = new ArrayList<>();
 
     /**
      * @param roadNumber which road the vehicle is travelling on
@@ -16,7 +16,7 @@ public class Road { //Road class
      */
     public Road(int roadNumber, int roadLength) {
         this.roadNumber = roadNumber;
-        this.roadLength = roadLength;
+        this.roadLength = 30;
     }
 
     public void addVehicle() { //adds a random vehicle index 0, 1, 2 to the road

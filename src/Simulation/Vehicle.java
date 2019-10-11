@@ -6,11 +6,11 @@ public abstract class Vehicle { //Car class
 
     //variables for Vehicle class inherited by it's sub classes Car, Motorbike and Bus
     private int speed;
-    private int positionOnRoad; //index 0 for car position start
+    public int positionOnRoad; //index 0 for car position start
     private int id;
     public float vehicleLength;
     private float vehicleBreadth;
-    ArrayList<Road> roads = new ArrayList<>();
+    public ArrayList<Road> roads = new ArrayList<>();
 
     /**
      * Instantiates a new Vehicle
@@ -28,7 +28,13 @@ public abstract class Vehicle { //Car class
     }
 
     public void changeRoad() {
-
+        for (Road road : roads) {
+            if (getPositionOnRoad() == road.getRoadLength()) {
+                road.setRoadNumber(2);
+                setPositionOnRoad(0);
+                road.setRoadLength(30);
+            }
+        }
     }
 
     /*setters and getters for car class*/

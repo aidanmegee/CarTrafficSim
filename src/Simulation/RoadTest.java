@@ -11,7 +11,7 @@ class RoadTest {
 
     @Test
     void roadTest() {
-        Road road = new Road(0, 5);
+        Road road = new Road(0, 30);
         road.setRoadNumber(1);
         road.setRoadLength(10);
         assertEquals(1, road.getRoadNumber());
@@ -39,7 +39,7 @@ class RoadTest {
 
     @Test
     void moveVehicle() {
-        Road road = new Road(1, 10);
+        Road road = new Road(1, 24);
         ArrayList<Vehicle> currentVehicles = new ArrayList<>();
         currentVehicles.add(new Car(3, 1, 1, 2));
         for (Vehicle vehicle : currentVehicles) {
