@@ -9,6 +9,7 @@ public class Road { //Road class
     public int roadLength;
     private int roadNumber;
     public ArrayList<Vehicle> currentVehicles = new ArrayList<>();
+    public ArrayList<TrafficLight> trafficLights = new ArrayList<>();
 
     /**
      * @param roadNumber which road the vehicle is travelling on
@@ -32,6 +33,13 @@ public class Road { //Road class
             case 2:
                 currentVehicles.add(new Bus(1, 0, 3, 2));
                 break;
+        }
+    }
+
+    public void addTrafficLight() {
+        for (TrafficLight trafficLight : trafficLights) {
+            trafficLights.add(trafficLight);
+            trafficLight.setLightPositionOnRoad(getRoadLength());
         }
     }
 

@@ -116,6 +116,15 @@ Added enum for traffic light class for traffic light state to stay green and red
 using Thread.sleep. Currently still need to test if operate() method works as intended. Set a currentState variable to start
 off as green then change based on a timer in future.
 
+Created addTrafficLight() method to add traffic lights at the end of roads based on the length of a road. Originally had this
+method in the Traffic Light class although moved it to road because Road "has a" traffic light, a traffic light doesn't
+"have a" traffic light. Fixed logic error for this.
+
+addRoad() method that adds a connecting road based on if a user wants to add roads to the simulation, this is different
+to the changeRoad() method that will be implemented after traffic light class is complete and tests work as intended.
+
+Currently having issues based on how to add roads and make vehicles travel to new roads. Potential fix could be to put the
+addRoad() method in vehicles sub classes then call them directly for each different vehicle type.
 
 
 

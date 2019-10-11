@@ -9,13 +9,17 @@ public class TrafficLight { //Traffic Light class
     public ArrayList<Road> roads = new ArrayList<>();
 
     public enum trafficLightState {RED, ORANGE, GREEN} //index 0-Red, 1-Orange, 2-Green
-    trafficLightState currentState = trafficLightState.GREEN;
 
+    private trafficLightState currentState = trafficLightState.GREEN;
+
+    /**
+     * @param lightPositionOnRoad position of any traffic light object on a road
+     */
     public TrafficLight(int lightPositionOnRoad) {
         this.lightPositionOnRoad = lightPositionOnRoad;
     }
 
-    public void operate() throws InterruptedException { //operates the traffic lights, determines if vehicle changes road based on traffic light state
+    public void operate() throws InterruptedException { //operates the traffic lights, Thread.sleep sets time the currentState stays as a certain enum
         switch (this.currentState) {
             case RED:
                 System.out.println("Traffic Lights are Red");
@@ -35,20 +39,14 @@ public class TrafficLight { //Traffic Light class
         }
     }
 
+    public void addRoad() {
+        for (Road connectingRoad : roads) {
+            connectingRoad.addVehicle();
+            connectingRoad.addTrafficLight();
 
-//    public void changeRoad() {
-//        Road connectingRoad = new Road(1, 30); //instantiates new road to connect to
-//        for (Road road : roads) {
-//            if (getPositionOnRoad() == road.getRoadLength()) {
-//                //check for traffic lights ****
-//                roads.add(connectingRoad);
-//                //eventually check if no roads are added to end of 1st road, removeVehicle() method is called
-//                road.setRoadNumber(1);
-//                road.setRoadLength(30);
-//                setPositionOnRoad(0);
-//            }
-//        }
-//    }
+        }
+    }
+
 
     /*Setters and getter methods for fields in Traffic Light class*/
 
