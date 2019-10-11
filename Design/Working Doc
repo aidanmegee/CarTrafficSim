@@ -82,5 +82,7 @@ The plan is to finish the Vehicle class and VehicleTest class before moving on t
 Add @param block comment for Vehicle class constructor to give a brief explanation of the variables in that class.
 Move vehicleMove() method to road class for understandability.
 
+Remove vehicle test because it is now abstract, instead created tests for each of its subclasses.
 Made Vehicle class abstract so subclasses (Car, Motorbike and Bus) extends the abstract Vehicle class. Removed vehicle test
-and test each sub class of vehicle works accordingly.
+and test each sub class of vehicle works accordingly. Add test for all 3 subclasses of Vehicle and test different vehicleLengths
+for each different "Vehicle type" so to speak.
