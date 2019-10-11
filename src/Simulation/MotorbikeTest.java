@@ -8,12 +8,12 @@ class MotorbikeTest {
 
     @Test
     void motorbikeTest() { //motorbike class test for road objects and getters
-        Motorbike motorbike = new Motorbike(1, 0, 1, 2,  1);
+        Motorbike motorbike = new Motorbike(1, 0, 1, 4,  2);
         motorbike.setSpeed(5);
         motorbike.setPositionOnRoad(1);
         motorbike.setId(2);
         motorbike.setVehicleLength(4);
-        motorbike.setVehicleBreadth(2); //motorbike breadth is half of its length
+        motorbike.setVehicleBreadth(2); //breadth is always half of Car's length
         assertEquals(5, motorbike.getSpeed());
         assertEquals(1, motorbike.getPositionOnRoad());
         assertEquals(2, motorbike.getId());
