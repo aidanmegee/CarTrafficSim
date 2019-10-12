@@ -129,6 +129,12 @@ addRoad() method in vehicles sub classes then call them directly for each differ
 Experimenting with different ideas for Traffic Lights operate() method to determine the state of the traffic lights. Using random
 float values to then set the state.
 
+Operate() method now changes trafficLight enum values from Green to orange to red and back to green if the random number generated
+
+Added a changeRoad() method that iterates through road ArrayList and then checks the current state of the traffic light
+if the lights are green at the end of the road, create a new road then add the new road to the ArrayList.
+
+
 
 
 

@@ -7,7 +7,7 @@ public class Road { //Road class
 
     //Road class variables
     public int roadLength;
-    private int roadNumber;
+    public int roadNumber;
     public ArrayList<Vehicle> currentVehicles = new ArrayList<>();
     public ArrayList<TrafficLight> trafficLights = new ArrayList<>();
 
@@ -48,6 +48,8 @@ public class Road { //Road class
         for (Vehicle vehicle : currentVehicles) {
             if (vehicle.getPositionOnRoad() < getRoadLength()) {
                 vehicle.setPositionOnRoad(vehicle.getPositionOnRoad() + vehicle.getSpeed());
+            } else if (vehicle.getPositionOnRoad() == getRoadLength()) {
+
             }
         }
     }
