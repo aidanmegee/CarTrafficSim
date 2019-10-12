@@ -9,7 +9,7 @@ public class Road { //Road class
     public int roadLength;
     public int roadNumber;
     public ArrayList<Vehicle> currentVehicles = new ArrayList<>();
-    public ArrayList<TrafficLight> trafficLights = new ArrayList<>();
+    public ArrayList<TrafficLight> trafficLights = new ArrayList<>(1); //index 0, 1 for traffic light array
 
     /**
      * @param roadNumber which road the vehicle is travelling on
@@ -44,12 +44,21 @@ public class Road { //Road class
         }
     }
 
-    public void moveVehicle() { //moves vehicle based on the position on a road
+    public void moveVehicle() throws InterruptedException { //moves vehicle based on the position on a road
+        trafficLights.get(0).operate();
         for (Vehicle vehicle : currentVehicles) {
             if (vehicle.getPositionOnRoad() < getRoadLength()) {
                 vehicle.setPositionOnRoad(vehicle.getPositionOnRoad() + vehicle.getSpeed());
-            } else if (vehicle.getPositionOnRoad() == getRoadLength()) {
-
+            }
+            if (vehicle.getPositionOnRoad() == getRoadLength()) {
+                if (trafficLights.get(0).getCurrentState() == TrafficLight.trafficLightState.GREEN) {
+                    trafficLights.get(0).changeRoad();
+                } else if (trafficLights.get(0).getCurrentState() == TrafficLight.trafficLightState.ORANGE && vehicle.getPositionOnRoad() < 24) {
+                    vehicle.setSpeed(vehicle.getSpeed() - 1);
+                    if (vehicle.getPositionOnRoad() == getRoadLength()) {
+                        vehicle.setSpeed(0);
+                    }
+                }
             }
         }
     }
