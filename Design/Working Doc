@@ -123,8 +123,11 @@ method in the Traffic Light class although moved it to road because Road "has a"
 addRoad() method that adds a connecting road based on if a user wants to add roads to the simulation, this is different
 to the changeRoad() method that will be implemented after traffic light class is complete and tests work as intended.
 
-Currently having issues based on how to add roads and make vehicles travel to new roads. Potential fix could be to put the
+currently having issues based on how to add roads and make vehicles travel to new roads. Potential fix could be to put the
 addRoad() method in vehicles sub classes then call them directly for each different vehicle type.
+
+Experimenting with different ideas for Traffic Lights operate() method to determine the state of the traffic lights. Using random
+float values to then set the state.
 
 
 

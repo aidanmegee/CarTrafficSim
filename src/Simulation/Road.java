@@ -38,6 +38,7 @@ public class Road { //Road class
 
     public void addTrafficLight() {
         for (TrafficLight trafficLight : trafficLights) {
+            //implement scanner to determine if user adds a travel like
             trafficLights.add(trafficLight);
             trafficLight.setLightPositionOnRoad(getRoadLength());
         }
