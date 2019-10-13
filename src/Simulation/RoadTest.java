@@ -27,7 +27,7 @@ class RoadTest {
     }
 
     @Test
-    void moveVehicle() {
+    void moveVehicle() throws InterruptedException {
         Road road = new Road(1, 24);
         road.addVehicle();
         road.moveVehicle();

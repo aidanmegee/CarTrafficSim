@@ -36,7 +36,7 @@ public class TrafficLight { //Traffic Light class
     public void changeRoad() { //change road, adds connecting road to road ArrayList
         for (Road connectingRoad : roads) {
             if (getCurrentState() == trafficLightState.GREEN) {
-                connectingRoad = new Road(1, 30);
+                connectingRoad = new Road(2, 30);
                 roads.add(connectingRoad);
             }
         }

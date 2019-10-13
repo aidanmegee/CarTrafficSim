@@ -38,22 +38,20 @@ public class Road { //Road class
 
     public void addTrafficLight() {
         for (TrafficLight trafficLight : trafficLights) {
-            //implement scanner to determine if user adds a travel like
+            //implement scanner to determine if user adds a traffic light
             trafficLights.add(trafficLight);
             trafficLight.setLightPositionOnRoad(getRoadLength());
         }
     }
 
     public void moveVehicle() throws InterruptedException { //moves vehicle based on the position on a road
-        trafficLights.get(0).operate();
         for (Vehicle vehicle : currentVehicles) {
             if (vehicle.getPositionOnRoad() < getRoadLength()) {
                 vehicle.setPositionOnRoad(vehicle.getPositionOnRoad() + vehicle.getSpeed());
-            }
-            if (vehicle.getPositionOnRoad() == getRoadLength()) {
+            } else if (vehicle.getPositionOnRoad() == getRoadLength()) {
                 if (trafficLights.get(0).getCurrentState() == TrafficLight.trafficLightState.GREEN) {
                     trafficLights.get(0).changeRoad();
-                } else if (trafficLights.get(0).getCurrentState() == TrafficLight.trafficLightState.ORANGE && vehicle.getPositionOnRoad() < 24) {
+                } else if (trafficLights.get(0).getCurrentState() == TrafficLight.trafficLightState.ORANGE && vehicle.getPositionOnRoad() >= 24) {
                     vehicle.setSpeed(vehicle.getSpeed() - 1);
                     if (vehicle.getPositionOnRoad() == getRoadLength()) {
                         vehicle.setSpeed(0);
@@ -63,10 +61,11 @@ public class Road { //Road class
         }
     }
 
-    public void removeVehicle() {
+    public void removeVehicle() { //removes vehicle from road if the vehicles position is equal to the road length and there are no new roads.
         for (Vehicle vehicle : currentVehicles) {
-            if (vehicle.getPositionOnRoad() == getRoadLength()) {
-                //removes vehicle from road if the vehicles position is equal to the road length
+            if (vehicle.getPositionOnRoad() == getRoadLength() && trafficLights.get(0).getCurrentState() == TrafficLight.trafficLightState.GREEN) {
+                currentVehicles.remove(vehicle.getId()); //Only removes vehicle at the end of a certain road with no connecting roads available
+                vehicle.setPositionOnRoad(-1);
             }
         }
     }

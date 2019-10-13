@@ -64,7 +64,7 @@ Assignment 2 - Problems - Start 11/10/2019
 - Change traffic light double to a float
 - Change traffic light class to use enums instead of boolean array
 - Main Simulation held majority of the class logic
-- Road "has a" Car ad the road or car class "moves" the car
+- Road "has a" Car add the road or car class "moves" the car
 
 Problem fixes starting from the top.
 
@@ -134,7 +134,12 @@ Operate() method now changes trafficLight enum values from Green to orange to re
 Added a changeRoad() method that iterates through road ArrayList and then checks the current state of the traffic light
 if the lights are green at the end of the road, create a new road then add the new road to the ArrayList.
 
+Changing moveVehicle() method to now move the vehicles to another road after checking the state of the traffic lights.
+If the traffic lights are green and the vehicle is at the end of a road, the vehicle changes road. If the vehicle is at
+position 24 out of 30 on a road and the traffic lights are Orange, the speed of the vehicle is set to its current speed - it's speed.
+At the current time the speed for all vehicles is 1 so the vehicle is just speed - 1.
 
-
-
+Put a "Test" main in Road to test the moveVehicle() method is working with all objects (traffic light, vehicles and roads)
+Playing around with removeVehicle() so that if there are no connecting roads, the vehicle is removed from the road and essentially
+disappears.
 
