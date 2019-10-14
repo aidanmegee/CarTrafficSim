@@ -44,7 +44,7 @@ public class Road { //Road class
         }
     }
 
-    public void moveVehicle() throws InterruptedException { //moves vehicle based on the position on a road
+    public void moveVehicle() { //moves vehicle based on the position on a road
         for (Vehicle vehicle : currentVehicles) {
             if (vehicle.getPositionOnRoad() < getRoadLength()) {
                 vehicle.setPositionOnRoad(vehicle.getPositionOnRoad() + vehicle.getSpeed());
@@ -81,6 +81,10 @@ public class Road { //Road class
 
     public ArrayList<Vehicle> getCurrentVehicles() {
         return currentVehicles;
+    }
+
+    public ArrayList<TrafficLight> getTrafficLights() {
+        return trafficLights;
     }
 
     public void setRoadLength(int roadLength) {

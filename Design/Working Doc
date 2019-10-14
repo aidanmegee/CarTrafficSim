@@ -143,3 +143,6 @@ Put a "Test" main in Road to test the moveVehicle() method is working with all o
 Playing around with removeVehicle() so that if there are no connecting roads, the vehicle is removed from the road and essentially
 disappears.
 
+Modified changeRoad() test to call it's method in traffic light class that adds connecting roads to road ArrayList instead
+of adding it in the test
+

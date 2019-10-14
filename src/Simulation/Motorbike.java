@@ -13,8 +13,10 @@ public class Motorbike extends Vehicle {
     public Motorbike(int speed, int positionOnRoad, int id, float vehicleBreadth) {
         super(speed, positionOnRoad, id, vehicleBreadth);
     }
+
     @Override
     public void setVehicleLength(float vehicleLength) {
         this.vehicleLength = (float) (0.5 * 4);
     }
+
 }

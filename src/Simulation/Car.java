@@ -3,6 +3,7 @@ package Simulation;
 public class Car extends Vehicle {
 
     //car graphics draw in Car class
+
     /**
      * Instantiates a new Car
      *
@@ -11,6 +12,7 @@ public class Car extends Vehicle {
      * @param id             the vehicle id
      * @param vehicleBreadth the vehicle breadth - Half of its length
      */
+
     public Car(int speed, int positionOnRoad, int id, float vehicleBreadth) {
         super(speed, positionOnRoad, id, vehicleBreadth);
     }

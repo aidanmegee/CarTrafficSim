@@ -27,7 +27,6 @@ class TrafficLightTest {
         Road connectingRoad = new Road(1, 30);
         TrafficLight trafficLight = new TrafficLight(30);
         trafficLight.changeRoad();
-        roads.add(connectingRoad);
         assertEquals(1, connectingRoad.getRoadNumber(), connectingRoad.getRoadLength());
     }
 }

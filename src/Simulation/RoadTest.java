@@ -2,12 +2,10 @@ package Simulation;
 
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
-import java.util.Random;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 class RoadTest {
+
 
     @Test
     void roadTest() {
@@ -27,7 +25,14 @@ class RoadTest {
     }
 
     @Test
-    void moveVehicle() throws InterruptedException {
+    void addTrafficLight() {
+        Road road = new Road(1, 30);
+        road.addTrafficLight();
+        assertNotNull(road.getTrafficLights());
+    }
+
+    @Test
+    void moveVehicle() {
         Road road = new Road(1, 24);
         road.addVehicle();
         road.moveVehicle();

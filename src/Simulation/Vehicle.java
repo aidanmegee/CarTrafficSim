@@ -1,7 +1,5 @@
 package Simulation;
 
-import java.util.ArrayList;
-
 public abstract class Vehicle { //Car class
 
     //variables for Vehicle class inherited by it's sub classes Car, Motorbike and Bus
