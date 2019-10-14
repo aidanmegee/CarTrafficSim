@@ -2,10 +2,15 @@ package Simulation;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class RoadTest {
 
+    public ArrayList<Road> connectingRoads = new ArrayList<>();
+    public ArrayList<Vehicle> currentVehicles = new ArrayList<>();
+    public ArrayList<TrafficLight> trafficLights = new ArrayList<>(1);
 
     @Test
     void roadTest() {
@@ -32,11 +37,27 @@ class RoadTest {
     }
 
     @Test
+    void changeRoad() {
+        Road road = new Road(1, 30);
+        Car car = new Car(1, 0, 1, 2);
+    }
+
+    @Test
     void moveVehicle() {
         Road road = new Road(1, 24);
         road.addVehicle();
         road.moveVehicle();
         assertEquals(1, road.getCurrentVehicles().get(0).getSpeed());
+    }
+
+    @Test
+    void slowVehicle() {
+
+    }
+
+    @Test
+    void removeVehicle() {
+
     }
 
 }

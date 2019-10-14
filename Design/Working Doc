@@ -160,3 +160,8 @@ to determine the new positionOnRoad etc.
 Made slowVehicle() and removeVehicle() use a nested for each loop that determines the current traffic light on the current road
 instead of using 0 index which would just base everything off of that particular traffic light.
 
+changeRoad() method now doesn't change based on traffic light colour because if vehicle is at the end of a road, it should
+move itself to the next road if there is a connecting road, the traffic lights are at the end of the road but the vehicle
+can only be at position 30 out of 30 if the lights are green making the changeRoad() method much smaller using a for each
+loop for both connectingRoads ArrayList and currentVehicles ArrayList.
+

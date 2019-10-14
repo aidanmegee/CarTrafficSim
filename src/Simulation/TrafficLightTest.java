@@ -11,7 +11,7 @@ class TrafficLightTest {
 
     @Test
     void trafficLightTest() {
-        TrafficLight trafficLight = new TrafficLight(30);
+        TrafficLight trafficLight = new TrafficLight(29);
         trafficLight.setLightPositionOnRoad(24);
         trafficLight.setCurrentState(TrafficLight.trafficLightState.RED);
         assertEquals(TrafficLight.trafficLightState.RED, trafficLight.getCurrentState());
@@ -20,7 +20,7 @@ class TrafficLightTest {
 
     @Test
     void operate() throws InterruptedException {
-        TrafficLight trafficLight = new TrafficLight(30);
+        TrafficLight trafficLight = new TrafficLight(29);
         trafficLight.operate();
         //TODO assertEquals for trafficlight enum values
     }

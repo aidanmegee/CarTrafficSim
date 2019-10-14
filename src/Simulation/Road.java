@@ -41,14 +41,14 @@ public class Road { //Road class
         for (TrafficLight trafficLight : trafficLights) {
             //implement scanner to determine if user adds a traffic light
             trafficLights.add(trafficLight);
-            trafficLight.setLightPositionOnRoad(getRoadLength());
+            trafficLight.setLightPositionOnRoad(getRoadLength() - 1);
         }
     }
 
     public void changeRoad() { //change road, adds connecting road to road ArrayList
         for (Road connectingRoad : connectingRoads) {
             for (Vehicle vehicle : currentVehicles) {
-                if (vehicle.getPositionOnRoad() == getRoadLength() && trafficLights.get(0).currentState == TrafficLight.trafficLightState.GREEN) {
+                if (vehicle.getPositionOnRoad() == getRoadLength()) {
                     connectingRoad.currentVehicles.add(vehicle);
                     vehicle.setPositionOnRoad(0);
                 }
@@ -71,7 +71,7 @@ public class Road { //Road class
                     vehicle.setSpeed(vehicle.getSpeed() / 2); //vehicle halves it's speed if lights are orange and vehicle is near the end of a road
                     if (vehicle.getPositionOnRoad() == getRoadLength() - 1 && trafficLightOnCurrentRoad.currentState == TrafficLight.trafficLightState.RED) {
                         vehicle.setSpeed(0); //vehicle stops on red light
-                        vehicle.setPositionOnRoad(getRoadLength() - 1);
+                        vehicle.setPositionOnRoad(getRoadLength() - 2);
                     }
                 }
             }
@@ -96,6 +96,10 @@ public class Road { //Road class
 
     public int getRoadNumber() {
         return roadNumber;
+    }
+
+    public ArrayList<Road> getConnectingRoads() {
+        return connectingRoads;
     }
 
     public ArrayList<Vehicle> getCurrentVehicles() {
