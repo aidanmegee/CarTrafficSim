@@ -144,5 +144,12 @@ Playing around with removeVehicle() so that if there are no connecting roads, th
 disappears.
 
 Modified changeRoad() test to call it's method in traffic light class that adds connecting roads to road ArrayList instead
-of adding it in the test
+of adding it in the test.
+
+addTrafficLight() test was to test that Traffic lights ArrayList is not empty. Currently trying to resolve
+the moveVehicle() method so that any vehicle will move to another road if there is a connecting road.
+
+Added a slowVehicle() method instead of having every thing in the moveVehicle() method as it was becoming very large, slowVehicle()
+is now responsible for if a vehicle is near the end of a road (getRoadLength() - 6), the vehicle halves it's speed
+then when the lights turn red, the vehicle comes to a complete stop by setting it's speed to 0.
 
