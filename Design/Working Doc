@@ -165,3 +165,6 @@ move itself to the next road if there is a connecting road, the traffic lights a
 can only be at position 30 out of 30 if the lights are green making the changeRoad() method much smaller using a for each
 loop for both connectingRoads ArrayList and currentVehicles ArrayList.
 
+Set traffic light position to the road length - 1 therefore a car can change road if it's position on a road is exactly equal
+to its length, in this case if 30, otherwise the vehicle stops at position 28, on segment behind
+

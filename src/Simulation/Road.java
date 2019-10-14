@@ -79,11 +79,10 @@ public class Road { //Road class
     }
 
     public void removeVehicle() { //removes vehicle from road if the vehicles position is equal to the road length and there are no new roads.
-        for (TrafficLight trafficLightOnCurrentRoad : trafficLights) {
+        for (Road connectingRoad : connectingRoads) {
             for (Vehicle vehicle : currentVehicles) {
-                if (vehicle.getPositionOnRoad() == getRoadLength() && trafficLightOnCurrentRoad.currentState == TrafficLight.trafficLightState.GREEN) {
-                    currentVehicles.remove(vehicle); //Only removes vehicle at the end of a certain road with no connecting roads available
-                    vehicle.setPositionOnRoad(-1);
+                if (vehicle.getPositionOnRoad() == getRoadLength()) {
+                    connectingRoad.currentVehicles.remove(vehicle); //Only removes vehicle at the end of a certain road with no connecting roads available
                 }
             }
         }
