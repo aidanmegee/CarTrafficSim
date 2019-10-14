@@ -33,10 +33,20 @@ public class TrafficLight { //Traffic Light class
         }
     }
 
+    public void addRoad() {
+//        for (TrafficLight trafficLight : trafficLights) {
+//            //implement scanner to determine if user adds a traffic light
+//            trafficLights.add(trafficLight);
+//            trafficLight.setLightPositionOnRoad(getRoadLength());
+//        }
+    }
+
     public void changeRoad() { //change road, adds connecting road to road ArrayList
         for (Road connectingRoad : roads) {
             if (getCurrentState() == trafficLightState.GREEN) {
                 roads.add(connectingRoad);
+            } else if (getCurrentState() == trafficLightState.GREEN && roads.isEmpty()) {
+                roads.get(-1).getCurrentVehicles().get(0).setPositionOnRoad(-1);
             }
         }
     }

@@ -54,12 +54,11 @@ public class Road { //Road class
 
     public void slowVehicle() {
         for (Vehicle vehicle : currentVehicles) {
-            if (vehicle.getPositionOnRoad() == getRoadLength() - 6) {
-                if (trafficLights.get(0).getCurrentState() ==  TrafficLight.trafficLightState.ORANGE) {
-                    vehicle.setSpeed(1/2); //vehicle halves it's speed if lights are orange and vehicle is near the end of a road
-                    if (trafficLights.get(0).getCurrentState() == TrafficLight.trafficLightState.RED) {
-                        vehicle.setSpeed(0); //vehicle stops on red light
-                    }
+            if (vehicle.getPositionOnRoad() == getRoadLength() - 6 && trafficLights.get(0).getCurrentState() == TrafficLight.trafficLightState.ORANGE) {
+                vehicle.setSpeed(vehicle.getSpeed() / 2); //vehicle halves it's speed if lights are orange and vehicle is near the end of a road
+                if (vehicle.getPositionOnRoad() == getRoadLength() - 1 && trafficLights.get(0).getCurrentState() == TrafficLight.trafficLightState.RED) {
+                    vehicle.setSpeed(0); //vehicle stops on red light
+                    vehicle.setPositionOnRoad(getRoadLength() - 1);
                 }
             }
         }
