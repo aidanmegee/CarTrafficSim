@@ -8,6 +8,7 @@ public class Road { //Road class
     //Road class variables
     public int roadLength;
     public int roadNumber;
+    public ArrayList<Road> connectingRoads = new ArrayList<>();
     public ArrayList<Vehicle> currentVehicles = new ArrayList<>();
     public ArrayList<TrafficLight> trafficLights = new ArrayList<>(1); //index 0, 1 for traffic light array
 
@@ -44,6 +45,17 @@ public class Road { //Road class
         }
     }
 
+    public void changeRoad() { //change road, adds connecting road to road ArrayList
+        for (Road connectingRoad : connectingRoads) {
+            for (Vehicle vehicle : currentVehicles) {
+                if (vehicle.getPositionOnRoad() == getRoadLength() && trafficLights.get(0).currentState == TrafficLight.trafficLightState.GREEN) {
+                    connectingRoad.currentVehicles.add(vehicle);
+                    vehicle.setPositionOnRoad(0);
+                }
+            }
+        }
+    }
+
     public void moveVehicle() { //moves vehicle based on the position on a road
         for (Vehicle vehicle : currentVehicles) {
             if (vehicle.getPositionOnRoad() < getRoadLength()) {
@@ -53,22 +65,26 @@ public class Road { //Road class
     }
 
     public void slowVehicle() {
-        for (Vehicle vehicle : currentVehicles) {
-            if (vehicle.getPositionOnRoad() == getRoadLength() - 6 && trafficLights.get(0).getCurrentState() == TrafficLight.trafficLightState.ORANGE) {
-                vehicle.setSpeed(vehicle.getSpeed() / 2); //vehicle halves it's speed if lights are orange and vehicle is near the end of a road
-                if (vehicle.getPositionOnRoad() == getRoadLength() - 1 && trafficLights.get(0).getCurrentState() == TrafficLight.trafficLightState.RED) {
-                    vehicle.setSpeed(0); //vehicle stops on red light
-                    vehicle.setPositionOnRoad(getRoadLength() - 1);
+        for (TrafficLight trafficLightOnCurrentRoad : trafficLights) {
+            for (Vehicle vehicle : currentVehicles) {
+                if (vehicle.getPositionOnRoad() == getRoadLength() - 6 && trafficLightOnCurrentRoad.currentState == TrafficLight.trafficLightState.ORANGE) {
+                    vehicle.setSpeed(vehicle.getSpeed() / 2); //vehicle halves it's speed if lights are orange and vehicle is near the end of a road
+                    if (vehicle.getPositionOnRoad() == getRoadLength() - 1 && trafficLightOnCurrentRoad.currentState == TrafficLight.trafficLightState.RED) {
+                        vehicle.setSpeed(0); //vehicle stops on red light
+                        vehicle.setPositionOnRoad(getRoadLength() - 1);
+                    }
                 }
             }
         }
     }
 
     public void removeVehicle() { //removes vehicle from road if the vehicles position is equal to the road length and there are no new roads.
-        for (Vehicle vehicle : currentVehicles) {
-            if (vehicle.getPositionOnRoad() == getRoadLength() && trafficLights.get(0).getCurrentState() == TrafficLight.trafficLightState.GREEN) {
-                currentVehicles.remove(vehicle.getId()); //Only removes vehicle at the end of a certain road with no connecting roads available
-                vehicle.setPositionOnRoad(-1);
+        for (TrafficLight trafficLightOnCurrentRoad : trafficLights) {
+            for (Vehicle vehicle : currentVehicles) {
+                if (vehicle.getPositionOnRoad() == getRoadLength() && trafficLightOnCurrentRoad.currentState == TrafficLight.trafficLightState.GREEN) {
+                    currentVehicles.remove(vehicle); //Only removes vehicle at the end of a certain road with no connecting roads available
+                    vehicle.setPositionOnRoad(-1);
+                }
             }
         }
     }

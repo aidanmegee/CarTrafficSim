@@ -1,11 +1,14 @@
 package Simulation;
 
 import org.junit.jupiter.api.Test;
+
 import java.util.ArrayList;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class TrafficLightTest {
     public ArrayList<Road> roads = new ArrayList<>();
+
     @Test
     void trafficLightTest() {
         TrafficLight trafficLight = new TrafficLight(30);
@@ -22,11 +25,4 @@ class TrafficLightTest {
         //TODO assertEquals for trafficlight enum values
     }
 
-    @Test
-    void changeRoad() {
-        Road connectingRoad = new Road(1, 30);
-        TrafficLight trafficLight = new TrafficLight(30);
-        trafficLight.changeRoad();
-        assertEquals(1, connectingRoad.getRoadNumber(), connectingRoad.getRoadLength());
-    }
 }

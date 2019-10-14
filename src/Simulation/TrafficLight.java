@@ -6,7 +6,6 @@ import java.util.Random;
 public class TrafficLight { //Traffic Light class
 
     public int lightPositionOnRoad;
-    public ArrayList<Road> roads = new ArrayList<>();
     public enum trafficLightState {RED, ORANGE, GREEN} //index 0-Red, 1-Orange, 2-Green
     public trafficLightState currentState = trafficLightState.GREEN;
 
@@ -33,31 +32,10 @@ public class TrafficLight { //Traffic Light class
         }
     }
 
-    public void addRoad() {
-//        for (TrafficLight trafficLight : trafficLights) {
-//            //implement scanner to determine if user adds a traffic light
-//            trafficLights.add(trafficLight);
-//            trafficLight.setLightPositionOnRoad(getRoadLength());
-//        }
-    }
-
-    public void changeRoad() { //change road, adds connecting road to road ArrayList
-        for (Road connectingRoad : roads) {
-            if (getCurrentState() == trafficLightState.GREEN) {
-                roads.add(connectingRoad);
-            } else if (getCurrentState() == trafficLightState.GREEN && roads.isEmpty()) {
-                roads.get(-1).getCurrentVehicles().get(0).setPositionOnRoad(-1);
-            }
-        }
-    }
     /*Setters and getter methods for fields in Traffic Light class*/
 
     public int getLightPositionOnRoad() {
         return lightPositionOnRoad;
-    }
-
-    public ArrayList<Road> getRoads() {
-        return roads;
     }
 
     public trafficLightState getCurrentState() {
