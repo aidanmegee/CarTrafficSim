@@ -168,3 +168,4 @@ loop for both connectingRoads ArrayList and currentVehicles ArrayList.
 Set traffic light position to the road length - 1 therefore a car can change road if it's position on a road is exactly equal
 to its length, in this case if 30, otherwise the vehicle stops at position 28, on segment behind
 
+Added simulation class that will hold class logic for controlling main.
