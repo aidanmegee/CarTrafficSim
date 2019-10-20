@@ -174,3 +174,8 @@ Added initial code for the GUI in the Simulation class for the menu bar for City
 works as intended and to start testing my classes for the traffic simulation.
 
 Added starter code for main to instantiate a new Simulation class that holds the GUI code.
+
+Added a JPanel and set the layout to a grid layout so the view of the city/roads and traffic etc. can be on the right side
+of the JFrame and then all the buttons and other labels outputting data can be visible at the same time as the view of the simulation.
+
+Testing to see how to approach the Simulation class that essentially holds the view and main controls the simulation.
