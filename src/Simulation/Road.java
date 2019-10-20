@@ -9,8 +9,8 @@ public class Road { //Road class
     public int roadLength;
     public int roadNumber;
     public ArrayList<Road> connectingRoads = new ArrayList<>();
+    public ArrayList<TrafficLight> trafficLights = new ArrayList<>(1); //index 0, 1 for traffic light array//index 0, 1 for traffic light array
     public ArrayList<Vehicle> currentVehicles = new ArrayList<>();
-    public ArrayList<TrafficLight> trafficLights = new ArrayList<>(1); //index 0, 1 for traffic light array
 
     /**
      * @param roadNumber which road the vehicle is travelling on
@@ -41,7 +41,7 @@ public class Road { //Road class
         for (TrafficLight trafficLight : trafficLights) {
             //implement scanner to determine if user adds a traffic light
             trafficLights.add(trafficLight);
-            trafficLight.setLightPositionOnRoad(getRoadLength() - 1);
+            trafficLight.setLightPositionOnRoad(29);
         }
     }
 
@@ -50,6 +50,7 @@ public class Road { //Road class
             for (Vehicle vehicle : currentVehicles) {
                 if (vehicle.getPositionOnRoad() == getRoadLength()) {
                     connectingRoad.currentVehicles.add(vehicle);
+                    connectingRoad.removeVehicle();
                     vehicle.setPositionOnRoad(0);
                 }
             }
@@ -101,12 +102,12 @@ public class Road { //Road class
         return connectingRoads;
     }
 
-    public ArrayList<Vehicle> getCurrentVehicles() {
-        return currentVehicles;
-    }
-
     public ArrayList<TrafficLight> getTrafficLights() {
         return trafficLights;
+    }
+
+    public ArrayList<Vehicle> getCurrentVehicles() {
+        return currentVehicles;
     }
 
     public void setRoadLength(int roadLength) {

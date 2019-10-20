@@ -37,12 +37,6 @@ class RoadTest {
     }
 
     @Test
-    void changeRoad() {
-        Road road = new Road(1, 30);
-        Car car = new Car(1, 0, 1, 2);
-    }
-
-    @Test
     void moveVehicle() {
         Road road = new Road(1, 24);
         road.addVehicle();

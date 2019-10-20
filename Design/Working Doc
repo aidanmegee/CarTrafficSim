@@ -168,4 +168,6 @@ loop for both connectingRoads ArrayList and currentVehicles ArrayList.
 Set traffic light position to the road length - 1 therefore a car can change road if it's position on a road is exactly equal
 to its length, in this case if 30, otherwise the vehicle stops at position 28, on segment behind
 
-Added simulation class that will hold class logic for controlling main.
+Added simulation for the GUI of the traffic sim that will be instantiated in main.
+
+Added initial code for the GUI in the Simulation class for the menu bar for City editing and Simulation.

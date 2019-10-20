@@ -7,7 +7,7 @@ public class TrafficLight { //Traffic Light class
 
     public int lightPositionOnRoad;
     public enum trafficLightState {RED, ORANGE, GREEN} //index 0-Red, 1-Orange, 2-Green
-    public trafficLightState currentState = trafficLightState.GREEN;
+    public trafficLightState currentState = trafficLightState.RED;
 
     /**
      * @param lightPositionOnRoad position of any traffic light object on a road
