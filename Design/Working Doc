@@ -170,4 +170,7 @@ to its length, in this case if 30, otherwise the vehicle stops at position 28, o
 
 Added simulation for the GUI of the traffic sim that will be instantiated in main.
 
-Added initial code for the GUI in the Simulation class for the menu bar for City editing and Simulation.
+Added initial code for the GUI in the Simulation class for the menu bar for City editing and Simulation. Added a main class to test GUI
+works as intended and to start testing my classes for the traffic simulation.
+
+Added starter code for main to instantiate a new Simulation class that holds the GUI code.

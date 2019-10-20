@@ -41,7 +41,7 @@ public class Road { //Road class
         for (TrafficLight trafficLight : trafficLights) {
             //implement scanner to determine if user adds a traffic light
             trafficLights.add(trafficLight);
-            trafficLight.setLightPositionOnRoad(29);
+            trafficLight.setLightPositionOnRoad(getRoadLength() - 1);
         }
     }
 
