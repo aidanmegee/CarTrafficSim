@@ -13,6 +13,7 @@ public class Simulation extends JFrame {
     public ArrayList<TrafficLight> trafficLights = new ArrayList<>(1); //index 0, 1 for traffic light array//index 0, 1 for traffic light array
     public ArrayList<Vehicle> currentVehicles = new ArrayList<>();
 
+    //Instantiates each object for simulation
     Road road = new Road(1, 30);
     TrafficLight trafficLight = new TrafficLight(29);
     Car car = new Car(1, 0, 1, 2);
@@ -20,6 +21,7 @@ public class Simulation extends JFrame {
     Bus bus = new Bus(1, 0, 3, 2);
 
 
+    //Constructor holds GUI components
     public Simulation() {
         super("Traffic Simulator");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -61,6 +63,13 @@ public class Simulation extends JFrame {
         setLocationRelativeTo(null);
     }
 
+    public void addStraightRoad() { //add a road object to simulation //TODO possibly need two methods to add different intersection types
+        for (Road road : connectingRoads) {
+            connectingRoads.add(road);
+            road.setRoadLength(road.getRoadLength());
+        }
+    }
+
     public void addVehicle() { //adds a random vehicle index 0, 1, 2 to the road
         Random random = new Random();
         int randomVehicle = random.nextInt(3);
@@ -81,7 +90,7 @@ public class Simulation extends JFrame {
         for (TrafficLight trafficLight : trafficLights) {
             //implement scanner to determine if user adds a traffic light
             trafficLights.add(trafficLight);
-            trafficLight.setLightPositionOnRoad(road.getRoadLength() - 1);
+            trafficLight.setLightPositionOnRoad(trafficLight.getLightPositionOnRoad());
         }
     }
 
