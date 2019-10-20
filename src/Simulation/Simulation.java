@@ -1,11 +1,13 @@
 package Simulation;
 
+import org.w3c.dom.css.Rect;
+
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class Simulation extends JFrame {
+public class Simulation extends JPanel {
 
     private JMenu cityEditing, simulation;
     private JMenuItem ce1, ce2, ce3, ce4, s1, s2, s3, s4;
@@ -13,13 +15,13 @@ public class Simulation extends JFrame {
     public ArrayList<TrafficLight> trafficLights = new ArrayList<>(1); //index 0, 1 for traffic light array//index 0, 1 for traffic light array
     public ArrayList<Vehicle> currentVehicles = new ArrayList<>();
 
-    //Instantiates road object for simulation
     Road road = new Road(1, 30);
-
     //Constructor holds GUI components
     public Simulation() {
-        super("Traffic Simulator");
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        JFrame mainFrame = new JFrame("Traffic Simulator");
+        mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        JPanel roadPanel = new JPanel();
 
         JMenuBar menuBar = new JMenuBar();
         cityEditing = new JMenu("City Editing");
@@ -49,13 +51,14 @@ public class Simulation extends JFrame {
 
         menuBar.add(cityEditing);
         menuBar.add(simulation);
-        setJMenuBar(menuBar);
-        setSize(1400, 1200);
-        setLayout(new BorderLayout());
-        setVisible(true);
+        mainFrame.add(this);
+        mainFrame.setJMenuBar(menuBar);
+        mainFrame.setSize(1400, 1200);
+        mainFrame.setLayout(new BorderLayout());
+        mainFrame.setVisible(true);
 
-        pack();
-        setLocationRelativeTo(null);
+        mainFrame.pack();
+        mainFrame.setLocationRelativeTo(null);
     }
 
     public void addStraightRoad() { //add a road object to simulation //TODO possibly need two methods to add different intersection types
@@ -64,6 +67,7 @@ public class Simulation extends JFrame {
             road.setRoadLength(road.getRoadLength());
         }
     }
+
 
     public void addVehicle() { //adds a random vehicle index 0, 1, 2 to the road
         Random random = new Random();

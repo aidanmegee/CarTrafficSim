@@ -179,3 +179,6 @@ Added a JPanel and set the layout to a grid layout so the view of the city/roads
 of the JFrame and then all the buttons and other labels outputting data can be visible at the same time as the view of the simulation.
 
 Testing to see how to approach the Simulation class that essentially holds the view and main controls the simulation.
+Put a large portion of the code from Road class into Simulation class. Transferred the test classes, although commented out for now.
+
+Working on Drawing the road with two lanes for now, then draw the vehicles after.
