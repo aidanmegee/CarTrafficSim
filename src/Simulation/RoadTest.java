@@ -21,37 +21,4 @@ class RoadTest {
         assertEquals(10, road.getRoadLength());
     }
 
-    @Test
-    void addVehicle() {
-        Road road = new Road(1, 30);
-        road.addVehicle();
-        assertNotNull(road.getCurrentVehicles());
-
-    }
-
-    @Test
-    void addTrafficLight() {
-        Road road = new Road(1, 30);
-        road.addTrafficLight();
-        assertNotNull(road.getTrafficLights());
-    }
-
-    @Test
-    void moveVehicle() {
-        Road road = new Road(1, 24);
-        road.addVehicle();
-        road.moveVehicle();
-        assertEquals(1, road.getCurrentVehicles().get(0).getSpeed());
-    }
-
-    @Test
-    void slowVehicle() {
-
-    }
-
-    @Test
-    void removeVehicle() {
-
-    }
-
 }

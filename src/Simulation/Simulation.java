@@ -13,13 +13,8 @@ public class Simulation extends JFrame {
     public ArrayList<TrafficLight> trafficLights = new ArrayList<>(1); //index 0, 1 for traffic light array//index 0, 1 for traffic light array
     public ArrayList<Vehicle> currentVehicles = new ArrayList<>();
 
-    //Instantiates each object for simulation
+    //Instantiates road object for simulation
     Road road = new Road(1, 30);
-    TrafficLight trafficLight = new TrafficLight(29);
-    Car car = new Car(1, 0, 1, 2);
-    Motorbike motorbike = new Motorbike(1, 0, 2, 2);
-    Bus bus = new Bus(1, 0, 3, 2);
-
 
     //Constructor holds GUI components
     public Simulation() {
@@ -98,6 +93,9 @@ public class Simulation extends JFrame {
         for (Vehicle vehicle : currentVehicles) {
             if (vehicle.getPositionOnRoad() < road.getRoadLength()) {
                 vehicle.setPositionOnRoad(vehicle.getPositionOnRoad() + vehicle.getSpeed());
+            } else if (vehicle.getPositionOnRoad() <= vehicle.getPositionOnRoad() - 3) {
+                vehicle.setSpeed(0); //stop vehicle if vehicle is 3 positions behind
+                vehicle.setPositionOnRoad(vehicle.getPositionOnRoad()); //stays in that position until vehicle in front moves
             }
         }
     }

@@ -10,7 +10,6 @@ public class Road { //Road class
     public int roadLength;
     public int roadNumber;
     public ArrayList<Road> connectingRoads = new ArrayList<>();
-    public ArrayList<TrafficLight> trafficLights = new ArrayList<>(1); //index 0, 1 for traffic light array//index 0, 1 for traffic light array
     public ArrayList<Vehicle> currentVehicles = new ArrayList<>();
 
     /**
