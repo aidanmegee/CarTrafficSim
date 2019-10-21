@@ -18,12 +18,13 @@ public class Road { //Road class
      */
     public Road(int roadNumber, int roadLength, int roadWidth) {
         this.roadNumber = roadNumber;
-        this.roadLength = roadLength;
-        this.roadWidth = roadWidth;
+        this.roadLength = 300;
+        this.roadWidth = 80;
     }
 
     void drawRoad(Graphics roadGraphics) {
-
+        roadGraphics.setColor(Color.BLACK);
+        roadGraphics.fillRect(10, 10, roadLength, roadWidth);
     }
 
     public void removeVehicle() { //removes vehicle from road if the vehicles position is equal to the road length and there are no new roads.

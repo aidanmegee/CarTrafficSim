@@ -184,3 +184,4 @@ Put a large portion of the code from Road class into Simulation class. Transferr
 Working on Drawing the road with two lanes for now, then draw the vehicles after.
 
 Added a bottomPanel JPanel object for the mode and status labels. Then added a cityViewPanel which will display the roads, cars etc.
+Simulation class now draws a road, need to add a method that draws a line separating both lanes on the road.

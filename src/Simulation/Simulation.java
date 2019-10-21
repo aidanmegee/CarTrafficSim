@@ -21,11 +21,10 @@ public class Simulation extends JPanel {
     //Constructor holds GUI components
     public Simulation() {
 
+        this.setModel(road);
         JFrame mainFrame = new JFrame("Traffic Simulator");
         mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        JLabel modeLabel = new JLabel("Mode: ");
-        JLabel statusLabel = new JLabel("Status: ");
         JMenuBar menuBar = new JMenuBar();
         cityEditing = new JMenu("City Editing");
         simulation = new JMenu("Simulation");
@@ -52,18 +51,12 @@ public class Simulation extends JPanel {
         JPanel cityViewPanel = new JPanel();
         JPanel bottomPanel = new JPanel();
         cityViewPanel.setLayout(new GridLayout(2, 3));
-        bottomPanel.setLayout(new BorderLayout());
-        bottomPanel.add(modeLabel);
-        bottomPanel.add(statusLabel);
         add(bottomPanel);
         menuBar.add(cityEditing);
         menuBar.add(simulation);
         mainFrame.add(this);
-        mainFrame.add(cityViewPanel, BorderLayout.EAST);
-        mainFrame.add(bottomPanel, BorderLayout.SOUTH);
         mainFrame.setJMenuBar(menuBar);
         mainFrame.setSize(1400, 1200);
-        mainFrame.setLayout(new BorderLayout());
         mainFrame.setVisible(true);
 
         mainFrame.pack();
@@ -83,6 +76,10 @@ public class Simulation extends JPanel {
     public void paint(Graphics g) {
         super.paint(g);
         road.drawRoad(g);
+    }
+
+    void setModel(Road road) {
+        this.road = road;
     }
 
     public void addVehicle() { //adds a random vehicle index 0, 1, 2 to the road
