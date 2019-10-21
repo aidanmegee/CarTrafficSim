@@ -11,11 +11,8 @@ public class Simulation extends JPanel {
 
     private JMenu cityEditing, simulation;
     private JMenuItem ce1, ce2, ce3, ce4, s1, s2, s3, s4;
-    public ArrayList<Road> connectingRoads = new ArrayList<>();
-    public ArrayList<TrafficLight> trafficLights = new ArrayList<>(1); //index 0, 1 for traffic light array//index 0, 1 for traffic light array
-    public ArrayList<Vehicle> currentVehicles = new ArrayList<>();
 
-    Road road = new Road(1, 30, 12);
+    Road road = new Road(1, 300, 80);
     Car car = new Car(1, 0, 1, 2);
 
     //Constructor holds GUI components
@@ -66,8 +63,8 @@ public class Simulation extends JPanel {
     }
 
     public void addStraightRoad() { //add a road object to simulation //TODO possibly need two methods to add different intersection types
-        for (Road road : connectingRoads) {
-            connectingRoads.add(road);
+        for (Road road : road.connectingRoads) {
+            road.connectingRoads.add(road);
             road.setRoadLength(road.getRoadLength());
         }
     }
@@ -87,53 +84,28 @@ public class Simulation extends JPanel {
         int randomVehicle = random.nextInt(3);
         switch (randomVehicle) {
             case 0:
-                currentVehicles.add(new Car(1, 0, 1, 2));
+                road.currentVehicles.add(new Car(1, 0, 1, 2));
                 break;
             case 1:
-                currentVehicles.add(new Motorbike(1, 0, 2, 2));
+                road.currentVehicles.add(new Motorbike(1, 0, 2, 2));
                 break;
             case 2:
-                currentVehicles.add(new Bus(1, 0, 3, 2));
+                road.currentVehicles.add(new Bus(1, 0, 3, 2));
                 break;
         }
     }
 
     public void addTrafficLight() {
-        for (TrafficLight trafficLight : trafficLights) {
+        for (TrafficLight trafficLight : road.trafficLights) {
             //implement scanner to determine if user adds a traffic light
-            trafficLights.add(trafficLight);
+            road.trafficLights.add(trafficLight);
             trafficLight.setLightPositionOnRoad(trafficLight.getLightPositionOnRoad());
         }
     }
 
-    public void moveVehicle() { //moves vehicle based on the position on a road
-        for (Vehicle vehicle : currentVehicles) {
-            if (vehicle.getPositionOnRoad() < road.getRoadLength()) {
-                vehicle.setPositionOnRoad(vehicle.getPositionOnRoad() + vehicle.getSpeed());
-            } else if (vehicle.getPositionOnRoad() <= vehicle.getPositionOnRoad() - 3) {
-                vehicle.setSpeed(0); //stop vehicle if vehicle is 3 positions behind
-                vehicle.setPositionOnRoad(vehicle.getPositionOnRoad()); //stays in that position until vehicle in front moves
-            }
-        }
-    }
-
-    public void slowVehicle() {
-        for (TrafficLight trafficLightOnCurrentRoad : trafficLights) {
-            for (Vehicle vehicle : currentVehicles) {
-                if (vehicle.getPositionOnRoad() == road.getRoadLength() - 6 && trafficLightOnCurrentRoad.currentState == TrafficLight.trafficLightState.ORANGE) {
-                    vehicle.setSpeed(vehicle.getSpeed() / 2); //vehicle halves it's speed if lights are orange and vehicle is near the end of a road
-                    if (vehicle.getPositionOnRoad() == road.getRoadLength() - 1 && trafficLightOnCurrentRoad.currentState == TrafficLight.trafficLightState.RED) {
-                        vehicle.setSpeed(0); //vehicle stops on red light
-                        vehicle.setPositionOnRoad(road.getRoadLength() - 2);
-                    }
-                }
-            }
-        }
-    }
-
     public void changeRoad() { //change road, adds connecting road to road ArrayList
-        for (Road connectingRoad : connectingRoads) {
-            for (Vehicle vehicle : currentVehicles) {
+        for (Road connectingRoad : road.connectingRoads) {
+            for (Vehicle vehicle : road.currentVehicles) {
                 if (vehicle.getPositionOnRoad() == road.getRoadLength()) {
                     connectingRoad.currentVehicles.add(vehicle);
                     connectingRoad.removeVehicle();
@@ -144,15 +116,15 @@ public class Simulation extends JPanel {
     }
 
     public ArrayList<Road> getConnectingRoads() {
-        return connectingRoads;
-    }
-
-    public ArrayList<TrafficLight> getTrafficLights() {
-        return trafficLights;
+        return road.connectingRoads;
     }
 
     public ArrayList<Vehicle> getCurrentVehicles() {
-        return currentVehicles;
+        return road.currentVehicles;
+    }
+
+    public ArrayList<TrafficLight> getTrafficLights() {
+        return road.trafficLights;
     }
 
 }

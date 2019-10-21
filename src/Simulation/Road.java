@@ -10,6 +10,7 @@ public class Road { //Road class
     public int roadNumber;
     private int roadWidth;
     public ArrayList<Road> connectingRoads = new ArrayList<>();
+    public ArrayList<TrafficLight> trafficLights = new ArrayList<>(1); //index 0, 1 for traffic light array//index 0, 1 for traffic light array
     public ArrayList<Vehicle> currentVehicles = new ArrayList<>();
 
     /**
@@ -32,6 +33,31 @@ public class Road { //Road class
             for (Vehicle vehicle : currentVehicles) {
                 if (vehicle.getPositionOnRoad() == getRoadLength()) {
                     connectingRoad.currentVehicles.remove(vehicle); //Only removes vehicle at the end of a certain road with no connecting roads available
+                }
+            }
+        }
+    }
+
+    public void moveVehicle() { //moves vehicle based on the position on a road
+        for (Vehicle vehicle : currentVehicles) {
+            if (vehicle.getPositionOnRoad() < getRoadLength()) {
+                vehicle.setPositionOnRoad(vehicle.getPositionOnRoad() + vehicle.getSpeed());
+            } else if (vehicle.getPositionOnRoad() <= vehicle.getPositionOnRoad() - 3) {
+                vehicle.setSpeed(0); //stop vehicle if vehicle is 3 positions behind
+                vehicle.setPositionOnRoad(vehicle.getPositionOnRoad()); //stays in that position until vehicle in front moves
+            }
+        }
+    }
+
+    public void slowVehicle() {
+        for (TrafficLight trafficLightOnCurrentRoad : trafficLights) {
+            for (Vehicle vehicle : currentVehicles) {
+                if (vehicle.getPositionOnRoad() == roadLength - 6 && trafficLightOnCurrentRoad.currentState == TrafficLight.trafficLightState.ORANGE) {
+                    vehicle.setSpeed(vehicle.getSpeed() / 2); //vehicle halves it's speed if lights are orange and vehicle is near the end of a road
+                    if (vehicle.getPositionOnRoad() == roadLength - 1 && trafficLightOnCurrentRoad.currentState == TrafficLight.trafficLightState.RED) {
+                        vehicle.setSpeed(0); //vehicle stops on red light
+                        vehicle.setPositionOnRoad(roadLength - 2);
+                    }
                 }
             }
         }
