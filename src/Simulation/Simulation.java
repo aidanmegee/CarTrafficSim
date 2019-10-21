@@ -16,13 +16,15 @@ public class Simulation extends JPanel {
     public ArrayList<Vehicle> currentVehicles = new ArrayList<>();
 
     Road road = new Road(1, 30);
+
     //Constructor holds GUI components
     public Simulation() {
 
         JFrame mainFrame = new JFrame("Traffic Simulator");
         mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        JPanel roadPanel = new JPanel();
 
+        JLabel modeLabel = new JLabel("Mode: ");
+        JLabel statusLabel = new JLabel("Status: ");
         JMenuBar menuBar = new JMenuBar();
         cityEditing = new JMenu("City Editing");
         simulation = new JMenu("Simulation");
@@ -47,11 +49,17 @@ public class Simulation extends JPanel {
         simulation.add(s4);
 
         JPanel cityViewPanel = new JPanel();
-        cityViewPanel.setLayout(new GridLayout(1, 3));
-
+        JPanel bottomPanel = new JPanel();
+        cityViewPanel.setLayout(new GridLayout(2, 3));
+        bottomPanel.setLayout(new BorderLayout());
+        bottomPanel.add(modeLabel);
+        bottomPanel.add(statusLabel);
+        add(bottomPanel);
         menuBar.add(cityEditing);
         menuBar.add(simulation);
         mainFrame.add(this);
+        mainFrame.add(cityViewPanel, BorderLayout.EAST);
+        mainFrame.add(bottomPanel, BorderLayout.SOUTH);
         mainFrame.setJMenuBar(menuBar);
         mainFrame.setSize(1400, 1200);
         mainFrame.setLayout(new BorderLayout());
@@ -67,6 +75,8 @@ public class Simulation extends JPanel {
             road.setRoadLength(road.getRoadLength());
         }
     }
+
+
 
 
     public void addVehicle() { //adds a random vehicle index 0, 1, 2 to the road

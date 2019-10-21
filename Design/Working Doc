@@ -182,3 +182,5 @@ Testing to see how to approach the Simulation class that essentially holds the v
 Put a large portion of the code from Road class into Simulation class. Transferred the test classes, although commented out for now.
 
 Working on Drawing the road with two lanes for now, then draw the vehicles after.
+
+Added a bottomPanel JPanel object for the mode and status labels. Then added a cityViewPanel which will display the roads, cars etc.
