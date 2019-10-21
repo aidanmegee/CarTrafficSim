@@ -14,11 +14,13 @@ class RoadTest {
 
     @Test
     void roadTest() {
-        Road road = new Road(0, 30);
+        Road road = new Road(0, 30, 12);
         road.setRoadNumber(1);
         road.setRoadLength(10);
+        road.setRoadWidth(25);
         assertEquals(1, road.getRoadNumber());
         assertEquals(10, road.getRoadLength());
+        assertEquals(25, road.getRoadWidth());
     }
 
 }

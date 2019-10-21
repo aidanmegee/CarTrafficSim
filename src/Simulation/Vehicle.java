@@ -7,7 +7,7 @@ public abstract class Vehicle { //Car class
     public int positionOnRoad; //index 0 for car position start
     private int id;
     public float vehicleLength;
-    private float vehicleBreadth;
+    private int vehicleBreadth;
 
     /**
      * Instantiates a new Vehicle
@@ -17,7 +17,7 @@ public abstract class Vehicle { //Car class
      * @param id             the vehicle id
      * @param vehicleBreadth the vehicle breadth - Half of its length
      */
-    public Vehicle(int speed, int positionOnRoad, int id, float vehicleBreadth) {
+    public Vehicle(int speed, int positionOnRoad, int id, int vehicleBreadth) {
         this.speed = speed;
         this.positionOnRoad = positionOnRoad;
         this.id = id;
@@ -59,7 +59,7 @@ public abstract class Vehicle { //Car class
 
     public abstract void setVehicleLength(float vehicleLength);
 
-    public void setVehicleBreadth(float vehicleBreadth) {
+    public void setVehicleBreadth(int vehicleBreadth) {
         this.vehicleBreadth = vehicleBreadth;
     }
 

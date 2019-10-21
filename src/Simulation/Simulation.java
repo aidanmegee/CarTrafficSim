@@ -15,7 +15,8 @@ public class Simulation extends JPanel {
     public ArrayList<TrafficLight> trafficLights = new ArrayList<>(1); //index 0, 1 for traffic light array//index 0, 1 for traffic light array
     public ArrayList<Vehicle> currentVehicles = new ArrayList<>();
 
-    Road road = new Road(1, 30);
+    Road road = new Road(1, 30, 12);
+    Car car = new Car(1, 0, 1, 2);
 
     //Constructor holds GUI components
     public Simulation() {
@@ -67,6 +68,8 @@ public class Simulation extends JPanel {
 
         mainFrame.pack();
         mainFrame.setLocationRelativeTo(null);
+        revalidate();
+        repaint();
     }
 
     public void addStraightRoad() { //add a road object to simulation //TODO possibly need two methods to add different intersection types
@@ -76,8 +79,11 @@ public class Simulation extends JPanel {
         }
     }
 
-
-
+    @Override
+    public void paint(Graphics g) {
+        super.paint(g);
+        road.drawRoad(g);
+    }
 
     public void addVehicle() { //adds a random vehicle index 0, 1, 2 to the road
         Random random = new Random();
