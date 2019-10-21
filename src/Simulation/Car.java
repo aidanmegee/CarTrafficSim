@@ -1,5 +1,7 @@
 package Simulation;
 
+import java.awt.*;
+
 public class Car extends Vehicle {
 
     //car graphics draw in Car class
@@ -15,6 +17,11 @@ public class Car extends Vehicle {
 
     public Car(int speed, int positionOnRoad, int id, int vehicleBreadth) {
         super(speed, positionOnRoad, id, vehicleBreadth);
+    }
+
+    void drawCar(Graphics carGraphics) {
+        carGraphics.setColor(Color.CYAN);
+        carGraphics.fillRect(15, 15, 40, 30);
     }
 
     @Override

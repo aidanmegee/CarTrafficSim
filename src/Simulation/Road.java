@@ -26,6 +26,8 @@ public class Road { //Road class
     void drawRoad(Graphics roadGraphics) {
         roadGraphics.setColor(Color.BLACK);
         roadGraphics.fillRect(10, 10, roadLength, roadWidth);
+        roadGraphics.setColor(Color.WHITE);
+        roadGraphics.drawLine(10, 48, roadLength, 48);
     }
 
     public void removeVehicle() { //removes vehicle from road if the vehicles position is equal to the road length and there are no new roads.
@@ -87,5 +89,15 @@ public class Road { //Road class
     public void setRoadWidth(int roadWidth) {
         this.roadWidth = roadWidth;
     }
+    public ArrayList<Road> getConnectingRoads() {
+        return connectingRoads;
+    }
 
+    public ArrayList<Vehicle> getCurrentVehicles() {
+        return currentVehicles;
+    }
+
+    public ArrayList<TrafficLight> getTrafficLights() {
+        return trafficLights;
+    }
 }

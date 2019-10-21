@@ -18,7 +18,7 @@ public class Simulation extends JPanel {
     //Constructor holds GUI components
     public Simulation() {
 
-        this.setModel(road);
+        this.setModel(road, car);
         JFrame mainFrame = new JFrame("Traffic Simulator");
         mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
@@ -53,7 +53,7 @@ public class Simulation extends JPanel {
         menuBar.add(simulation);
         mainFrame.add(this);
         mainFrame.setJMenuBar(menuBar);
-        mainFrame.setSize(1400, 1200);
+        mainFrame.setSize(1920, 1080);
         mainFrame.setVisible(true);
 
         mainFrame.pack();
@@ -73,10 +73,12 @@ public class Simulation extends JPanel {
     public void paint(Graphics g) {
         super.paint(g);
         road.drawRoad(g);
+        car.drawCar(g);
     }
 
-    void setModel(Road road) {
+    void setModel(Road road, Car car) {
         this.road = road;
+        this.car = car;
     }
 
     public void addVehicle() { //adds a random vehicle index 0, 1, 2 to the road
@@ -113,18 +115,6 @@ public class Simulation extends JPanel {
                 }
             }
         }
-    }
-
-    public ArrayList<Road> getConnectingRoads() {
-        return road.connectingRoads;
-    }
-
-    public ArrayList<Vehicle> getCurrentVehicles() {
-        return road.currentVehicles;
-    }
-
-    public ArrayList<TrafficLight> getTrafficLights() {
-        return road.trafficLights;
     }
 
 }
