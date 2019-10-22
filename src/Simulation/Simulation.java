@@ -12,8 +12,8 @@ public class Simulation extends JPanel {
     private JMenu cityEditing, simulation;
     private JMenuItem ce1, ce2, ce3, ce4, s1, s2, s3, s4;
 
-    Road road = new Road(1, 300, 80);
-    Car car = new Car(1, 0, 1, 2);
+    Road road = new Road(1, 300, 80, 10, 10, 10, 50, 10);
+    Car car = new Car(1, 0, 1, 2, 10);
 
     //Constructor holds GUI components
     public Simulation() {
@@ -86,13 +86,13 @@ public class Simulation extends JPanel {
         int randomVehicle = random.nextInt(3);
         switch (randomVehicle) {
             case 0:
-                road.currentVehicles.add(new Car(1, 0, 1, 2));
+                road.currentVehicles.add(new Car(1, 0, 1, 2, 10));
                 break;
             case 1:
-                road.currentVehicles.add(new Motorbike(1, 0, 2, 2));
+                road.currentVehicles.add(new Motorbike(1, 0, 2, 2, 10));
                 break;
             case 2:
-                road.currentVehicles.add(new Bus(1, 0, 3, 2));
+                road.currentVehicles.add(new Bus(1, 0, 3, 2, 10));
                 break;
         }
     }

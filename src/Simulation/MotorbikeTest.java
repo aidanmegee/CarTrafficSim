@@ -8,7 +8,7 @@ class MotorbikeTest {
 
     @Test
     void motorbikeTest() { //motorbike class test for road objects and getters
-        Motorbike motorbike = new Motorbike(1, 0, 1, 4);
+        Motorbike motorbike = new Motorbike(1, 0, 1, 4, 10);
         motorbike.setSpeed(5);
         motorbike.setPositionOnRoad(1);
         motorbike.setId(2);

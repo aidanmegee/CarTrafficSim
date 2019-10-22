@@ -9,6 +9,8 @@ public class Road { //Road class
     public int roadLength;
     public int roadNumber;
     private int roadWidth;
+    private int x, y, x1, y1;
+    private final int SCALE;
     public ArrayList<Road> connectingRoads = new ArrayList<>();
     public ArrayList<TrafficLight> trafficLights = new ArrayList<>(1); //index 0, 1 for traffic light array//index 0, 1 for traffic light array
     public ArrayList<Vehicle> currentVehicles = new ArrayList<>();
@@ -17,17 +19,25 @@ public class Road { //Road class
      * @param roadNumber which road the vehicle is travelling on
      * @param roadLength length of which the vehicle is travelling on
      */
-    public Road(int roadNumber, int roadLength, int roadWidth) {
+    public Road(int roadNumber, int roadLength, int roadWidth, int x, int y, int x1, int y1, int SCALE) {
         this.roadNumber = roadNumber;
-        this.roadLength = 300;
-        this.roadWidth = 80;
+        this.roadLength = 30;
+        this.roadWidth = 8;
+        this.x = 1;
+        this.y = 1;
+        this.x1 = 1;
+        this.y1 = 5;
+        this.SCALE = 10;
     }
 
     void drawRoad(Graphics roadGraphics) {
-        roadGraphics.setColor(Color.BLACK);
-        roadGraphics.fillRect(10, 10, roadLength, roadWidth);
-        roadGraphics.setColor(Color.WHITE);
-        roadGraphics.drawLine(10, 48, roadLength, 48);
+        Graphics2D roadGraphics2 = (Graphics2D) roadGraphics;
+        roadGraphics2.setColor(Color.BLACK);
+        roadGraphics2.fillRect(x, y, (roadLength) * SCALE, (roadWidth) * SCALE);
+        roadGraphics2.setColor(Color.WHITE);
+        roadGraphics2.drawLine(x1, y1, (roadLength) * SCALE, (2) * SCALE);
+        roadGraphics2.scale(10.0, 10.0);
+
     }
 
     public void removeVehicle() { //removes vehicle from road if the vehicles position is equal to the road length and there are no new roads.

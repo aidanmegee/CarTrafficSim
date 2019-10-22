@@ -8,6 +8,7 @@ public abstract class Vehicle { //Car class
     private int id;
     public float vehicleLength;
     private int vehicleBreadth;
+    private final int SCALE;
 
     /**
      * Instantiates a new Vehicle
@@ -17,11 +18,12 @@ public abstract class Vehicle { //Car class
      * @param id             the vehicle id
      * @param vehicleBreadth the vehicle breadth - Half of its length
      */
-    public Vehicle(int speed, int positionOnRoad, int id, int vehicleBreadth) {
+    public Vehicle(int speed, int positionOnRoad, int id, int vehicleBreadth, int SCALE) {
         this.speed = speed;
         this.positionOnRoad = positionOnRoad;
         this.id = id;
         this.vehicleBreadth = vehicleBreadth;
+        this.SCALE = 10;
     }
 
     /*setters and getters for car class*/

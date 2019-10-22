@@ -10,8 +10,8 @@ public class Motorbike extends Vehicle {
      * @param id             the vehicle id
      * @param vehicleBreadth the vehicle breadth - Half of its length
      */
-    public Motorbike(int speed, int positionOnRoad, int id, int vehicleBreadth) {
-        super(speed, positionOnRoad, id, vehicleBreadth);
+    public Motorbike(int speed, int positionOnRoad, int id, int vehicleBreadth, int SCALE) {
+        super(speed, positionOnRoad, id, vehicleBreadth, SCALE);
     }
 
     @Override

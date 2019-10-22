@@ -185,3 +185,8 @@ Working on Drawing the road with two lanes for now, then draw the vehicles after
 
 Added a bottomPanel JPanel object for the mode and status labels. Then added a cityViewPanel which will display the roads, cars etc.
 Simulation class now draws a road, need to add a method that draws a line separating both lanes on the road.
+
+Car class now draws a car or "itself". Road class now draws a road with a line in the center.
+Need to find a way to move the drawn car on a road in main.
+
+Added a final int named SCALE to scale up pixel size for drawing each objects, only currently in Car class and Road class.

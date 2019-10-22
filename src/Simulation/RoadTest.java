@@ -14,7 +14,7 @@ class RoadTest {
 
     @Test
     void roadTest() {
-        Road road = new Road(0, 30, 12);
+        Road road = new Road(0, 30, 12, 10, 10, 10, 50, 10);
         road.setRoadNumber(1);
         road.setRoadLength(10);
         road.setRoadWidth(25);

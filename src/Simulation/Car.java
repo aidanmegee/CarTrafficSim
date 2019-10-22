@@ -15,13 +15,13 @@ public class Car extends Vehicle {
      * @param vehicleBreadth the vehicle breadth - Half of its length
      */
 
-    public Car(int speed, int positionOnRoad, int id, int vehicleBreadth) {
-        super(speed, positionOnRoad, id, vehicleBreadth);
+    public Car(int speed, int positionOnRoad, int id, int vehicleBreadth, int SCALE) {
+        super(speed, positionOnRoad, id, vehicleBreadth, SCALE);
     }
 
     void drawCar(Graphics carGraphics) {
         carGraphics.setColor(Color.CYAN);
-        carGraphics.fillRect(15, 15, 40, 30);
+        carGraphics.fillRect(positionOnRoad, 10, (int) getVehicleBreadth(), (int) vehicleLength);
     }
 
     @Override
