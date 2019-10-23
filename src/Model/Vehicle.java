@@ -3,12 +3,11 @@ package Model;
 public abstract class Vehicle { //Model.Car class
 
     //variables for Model.Vehicle class inherited by it's sub classes Model.Car, Model.Motorbike and Model.Bus
-    private int speed;
+    public int speed;
     public int positionOnRoad; //index 0 for car position start
-    private int id;
+    public int id;
     public float vehicleLength;
-    private int vehicleBreadth;
-    private final int SCALE;
+    public int vehicleBreadth;
 
     /**
      * Instantiates a new Model.Vehicle
@@ -18,12 +17,11 @@ public abstract class Vehicle { //Model.Car class
      * @param id             the vehicle id
      * @param vehicleBreadth the vehicle breadth - Half of its length
      */
-    public Vehicle(int speed, int positionOnRoad, int id, int vehicleBreadth, int SCALE) {
+    public Vehicle(int speed, int positionOnRoad, int id, int vehicleBreadth) {
         this.speed = speed;
         this.positionOnRoad = positionOnRoad;
         this.id = id;
         this.vehicleBreadth = vehicleBreadth;
-        this.SCALE = 10;
     }
 
     /*setters and getters for car class*/

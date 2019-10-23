@@ -15,8 +15,8 @@ public class Car extends Vehicle {
      * @param vehicleBreadth the vehicle breadth - Half of its length
      */
 
-    public Car(int speed, int positionOnRoad, int id, int vehicleBreadth, int SCALE) {
-        super(speed, positionOnRoad, id, vehicleBreadth, SCALE);
+    public Car(int speed, int positionOnRoad, int id, int vehicleBreadth) {
+        super(speed, positionOnRoad, id, vehicleBreadth);
     }
 
     void drawCar(Graphics carGraphics) {

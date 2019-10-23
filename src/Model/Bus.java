@@ -11,8 +11,8 @@ public class Bus extends Vehicle {
      * @param vehicleBreadth the vehicle breadth - Half of its length
      */
 
-    public Bus(int speed, int positionOnRoad, int id, int vehicleBreadth, int SCALE) {
-        super(speed, positionOnRoad, id, vehicleBreadth, SCALE);
+    public Bus(int speed, int positionOnRoad, int id, int vehicleBreadth) {
+        super(speed, positionOnRoad, id, vehicleBreadth);
     }
 
     @Override

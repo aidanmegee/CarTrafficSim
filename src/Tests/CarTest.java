@@ -7,7 +7,7 @@ class CarTest {
 
     @Test
     void carTest() { //Model.Car class test for road objects and getters
-        Car car = new Car(1, 0, 1, 4, 10);
+        Car car = new Car(1, 0, 1, 4);
         car.setSpeed(3);
         car.setPositionOnRoad(2);
         car.setId(3);

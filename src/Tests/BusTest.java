@@ -7,7 +7,7 @@ class BusTest {
 
     @Test
     void busTest() { //bus class test for road objects and getters
-        Bus bus = new Bus(1, 0, 1, 4, 10);
+        Bus bus = new Bus(1, 0, 1, 4);
         bus.setSpeed(2);
         bus.setPositionOnRoad(3);
         bus.setId(4);
