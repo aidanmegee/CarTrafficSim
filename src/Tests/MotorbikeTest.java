@@ -1,5 +1,4 @@
-package Simulation;
-
+import Model.Motorbike;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -13,7 +12,7 @@ class MotorbikeTest {
         motorbike.setPositionOnRoad(1);
         motorbike.setId(2);
         motorbike.setVehicleLength(4);
-        motorbike.setVehicleBreadth(2); //breadth is always half of Car's length
+        motorbike.setVehicleBreadth(2); //breadth is always half of Model.Car's length
         assertEquals(5, motorbike.getSpeed());
         assertEquals(1, motorbike.getPositionOnRoad());
         assertEquals(2, motorbike.getId());

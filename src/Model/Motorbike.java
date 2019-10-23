@@ -1,9 +1,9 @@
-package Simulation;
+package Model;
 
 public class Motorbike extends Vehicle {
 
     /**
-     * Instantiates a new Vehicle
+     * Instantiates a new Model.Vehicle
      *
      * @param speed          the speed
      * @param positionOnRoad the position on the road

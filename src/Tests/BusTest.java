@@ -1,5 +1,4 @@
-package Simulation;
-
+import Model.Bus;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -13,7 +12,7 @@ class BusTest {
         bus.setPositionOnRoad(3);
         bus.setId(4);
         bus.setVehicleLength(12);
-        bus.setVehicleBreadth(2); //breadth is always half of Car's length
+        bus.setVehicleBreadth(2); //breadth is always half of Model.Car's length
         assertEquals(2, bus.getSpeed());
         assertEquals(3, bus.getPositionOnRoad());
         assertEquals(4, bus.getId());

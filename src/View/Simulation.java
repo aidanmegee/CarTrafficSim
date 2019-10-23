@@ -1,10 +1,9 @@
-package Simulation;
+package View;
 
-import org.w3c.dom.css.Rect;
+import Model.*;
 
 import javax.swing.*;
 import java.awt.*;
-import java.util.ArrayList;
 import java.util.Random;
 
 public class Simulation extends JPanel {
@@ -24,7 +23,7 @@ public class Simulation extends JPanel {
 
         JMenuBar menuBar = new JMenuBar();
         cityEditing = new JMenu("City Editing");
-        simulation = new JMenu("Simulation");
+        simulation = new JMenu("View.Simulation");
         ce1 = new JMenuItem("Create a new City");
         ce2 = new JMenuItem("Edit a City");
         ce3 = new JMenuItem("Open a City");
@@ -33,7 +32,7 @@ public class Simulation extends JPanel {
         s1 = new JMenuItem("Set Update Rate");
         s2 = new JMenuItem("Run the Simulator");
         s3 = new JMenuItem("Stop the Simulator");
-        s4 = new JMenuItem("Set Vehicle Spawn Rate"); //popup dialogue boxes to set these spawn rates
+        s4 = new JMenuItem("Set Model.Vehicle Spawn Rate"); //popup dialogue boxes to set these spawn rates
 
         cityEditing.add(ce1);
         cityEditing.add(ce2);
@@ -67,13 +66,6 @@ public class Simulation extends JPanel {
             road.connectingRoads.add(road);
             road.setRoadLength(road.getRoadLength());
         }
-    }
-
-    @Override
-    public void paint(Graphics g) {
-        super.paint(g);
-        road.drawRoad(g);
-        car.drawCar(g);
     }
 
     void setModel(Road road, Car car) {

@@ -1,5 +1,5 @@
-package Simulation;
-
+import Model.Road;
+import Model.TrafficLight;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;

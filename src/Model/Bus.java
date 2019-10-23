@@ -1,9 +1,9 @@
-package Simulation;
+package Model;
 
 public class Bus extends Vehicle {
 
     /**
-     * Instantiates a new Bus
+     * Instantiates a new Model.Bus
      *
      * @param speed          the speed
      * @param positionOnRoad the position on the road

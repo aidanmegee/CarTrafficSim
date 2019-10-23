@@ -1,11 +1,11 @@
-package Simulation;
+package Model;
 
 import java.awt.*;
 import java.util.ArrayList;
 
-public class Road { //Road class
+public class Road { //Model.Road class
 
-    //Road class variables
+    //Model.Road class variables
     public int roadLength;
     public int roadNumber;
     private int roadWidth;
@@ -75,7 +75,7 @@ public class Road { //Road class
         }
     }
 
-    /*setters and getters for Road class*/
+    /*setters and getters for Model.Road class*/
     public int getRoadLength() {
         return roadLength;
     }

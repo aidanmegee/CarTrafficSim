@@ -1,8 +1,8 @@
-package Simulation;
+package Model;
 
-public abstract class Vehicle { //Car class
+public abstract class Vehicle { //Model.Car class
 
-    //variables for Vehicle class inherited by it's sub classes Car, Motorbike and Bus
+    //variables for Model.Vehicle class inherited by it's sub classes Model.Car, Model.Motorbike and Model.Bus
     private int speed;
     public int positionOnRoad; //index 0 for car position start
     private int id;
@@ -11,7 +11,7 @@ public abstract class Vehicle { //Car class
     private final int SCALE;
 
     /**
-     * Instantiates a new Vehicle
+     * Instantiates a new Model.Vehicle
      *
      * @param speed          the speed
      * @param positionOnRoad the position on the road

@@ -1,13 +1,13 @@
-package Simulation;
+package Model;
 
 import java.awt.*;
 
 public class Car extends Vehicle {
 
-    //car graphics draw in Car class
+    //car graphics draw in Model.Car class
 
     /**
-     * Instantiates a new Car
+     * Instantiates a new Model.Car
      *
      * @param speed          the speed
      * @param positionOnRoad the position on the road

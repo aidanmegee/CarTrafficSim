@@ -1,5 +1,3 @@
-package Simulation;
-
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -14,7 +12,7 @@ class SimulationTest {
 //
 //    @Test
 //    void addVehicle() {
-//        Road road = new Road(1, 30);
+//        Model.Road road = new Model.Road(1, 30);
 //        road.currentVehicles.addVehicle();
 //        assertNotNull(getCurrentVehicles());
 //
@@ -28,7 +26,7 @@ class SimulationTest {
 //
 //    @Test
 //    void moveVehicle() {
-//        Road road = new Road(1, 24);
+//        Model.Road road = new Model.Road(1, 24);
 //        addVehicle();
 //        assertEquals(1, road.currentVehicles().get(0).getSpeed());
 //    }
