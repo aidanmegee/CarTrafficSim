@@ -24,7 +24,7 @@ roadChange() method in the Model.Road class moves the car from road 1 to road 2 
 
 
 
-Implementing Main View.Simulation Class:
+Implementing Control.Main View.Simulation Class:
 After completing all three out of four classes needed for the project along with the test code. 
 I started on the MainSimulation Class of my project which is where everything is simulated. 
 I started to write out main() and using a while loop so the car keeps increments by 1 each time the car position is less than 4. 
@@ -63,7 +63,7 @@ Assignment 2 - Problems - Start 11/10/2019
 - Add more descriptive names to the variables
 - Change traffic light double to a float
 - Change traffic light class to use enums instead of boolean array
-- Main View.Simulation held majority of the class logic
+- Control.Main View.Simulation held majority of the class logic
 - Model.Road "has a" Model.Car add the road or car class "moves" the car
 
 Problem fixes starting from the top.
