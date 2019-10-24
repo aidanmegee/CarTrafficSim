@@ -37,9 +37,22 @@ public class mainFrame extends JPanel {
         simulation.add(s4);
 
         JPanel cityViewPanel = new JPanel();
-        JPanel bottomPanel = new JPanel();
+        JPanel bottomPanelLeft = new JPanel();
+        JPanel bottomPanelRight = new JPanel();
+        JLabel bottomLabel1 = new JLabel();
+        JLabel bottomLabel2 = new JLabel();
+        bottomLabel1.setText("Mode: ");
+        bottomLabel2.setText("Status: ");
+
         cityViewPanel.setLayout(new GridLayout(10, 10));
-        add(bottomPanel);
+        bottomPanelLeft.setLayout(new BorderLayout());
+        bottomLabel1.setLayout(new BorderLayout());
+        bottomLabel2.setLayout(new BorderLayout());
+
+        bottomPanelLeft.add(bottomLabel1, BorderLayout.WEST);
+        bottomPanelRight.add(bottomLabel2, BorderLayout.EAST);
+        add(bottomPanelLeft, BorderLayout.SOUTH);
+        add(bottomPanelRight, BorderLayout.SOUTH);
         menuBar.add(cityEditing);
         menuBar.add(simulation);
         mainFrame.add(this);

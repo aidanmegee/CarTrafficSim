@@ -1,6 +1,5 @@
 package Control;
 
-import Model.Road;
 import View.mainFrame;
 
 public class Main {
