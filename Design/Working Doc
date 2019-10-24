@@ -199,3 +199,5 @@ Added a mainFrame class that will hold all of the GUI components then instantiat
 
 Adding actionListeners for the menuItems in the menuBar that will be used for setting the rates of certain variables in the simulation.
 
+Working on making GUI components look neat along with action listeners, then move on to drawing objects
+in the classes based on what is added to the simulation.

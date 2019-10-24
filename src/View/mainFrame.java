@@ -5,7 +5,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class mainFrame extends JPanel implements ActionListener {
+public class mainFrame extends JPanel {
 
     private JMenu cityEditing, simulation;
     private JMenuItem ce1, ce2, ce3, ce4, s1, s2, s3, s4;
@@ -26,17 +26,47 @@ public class mainFrame extends JPanel implements ActionListener {
         s1 = new JMenuItem("Set Update Rate");
         s2 = new JMenuItem("Run the Simulator");
         s3 = new JMenuItem("Stop the Simulator");
-        s4 = new JMenuItem("Set Model.Vehicle Spawn Rate"); //popup dialogue boxes to set these spawn rates
+        s4 = new JMenuItem("Set Vehicle Spawn Rate"); //popup dialogue boxes to set these spawn rates
 
         cityEditing.add(ce1);
         cityEditing.add(ce2);
         cityEditing.add(ce3);
         cityEditing.add(ce4);
 
+        ce1.addActionListener(newCityEvent -> {
+            //creates new city from scratch
+        });
+        ce2.addActionListener(editCityEvent -> {
+            //should allow user to load a city and then edit
+        });
+        ce3.addActionListener(openCityEvent -> {
+            //load file .csv try catch possibly
+        });
+        ce4.addActionListener(saveCityEvent -> {
+            //save file .csv
+        });
+
         simulation.add(s1);
         simulation.add(s2);
         simulation.add(s3);
         simulation.add(s4);
+
+        s1.addActionListener(updateRateEvent -> {
+            JOptionPane.showInputDialog("Enter the Update Rate");
+            //set updateRate of simulation
+            //popup box input that sets the update rate
+        });
+        s2.addActionListener(runSimulatorEvent -> {
+            //essentially starts the simulation
+        });
+        s3.addActionListener(stopSimulatorEvent -> {
+            //stops simulator, **Add if a car crashed, create self made exception that closes program
+        });
+        s4.addActionListener(vehicleSpawnRateEvent -> {
+            JOptionPane.showInputDialog("Enter Vehicle Spawn Rate");
+            //set spawn rate (use of timer method for spawn rates can change?
+            //popup input box that sets the update rate/speed
+        });
 
         JPanel cityViewPanel = new JPanel();
         JPanel bottomPanelLeft = new JPanel();
@@ -68,16 +98,4 @@ public class mainFrame extends JPanel implements ActionListener {
         repaint();
     }
 
-    @Override
-    public void actionPerformed(ActionEvent actionEvent) {
-        ce1.addActionListener(this);
-        ce2.addActionListener(this);
-        ce3.addActionListener(this);
-        ce4.addActionListener(this);
-
-        s1.addActionListener(this);
-        s2.addActionListener(this);
-        s3.addActionListener(this);
-        s4.addActionListener(this);
-    }
 }
