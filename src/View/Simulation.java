@@ -10,6 +10,7 @@ public class Simulation {
     Vehicle car = new Car(1, 0, 1, 9);
     Vehicle motorbike = new Motorbike(1, 0, 2, 9);
     Vehicle bus = new Bus(1, 0, 3, 9);
+
     //Constructor holds GUI components
     public void addStraightRoad() { //add a road object to simulation //TODO possibly need two methods to add different intersection types
         for (Road road : road.connectingRoads) {

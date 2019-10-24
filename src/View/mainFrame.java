@@ -2,8 +2,10 @@ package View;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class mainFrame extends JPanel {
+public class mainFrame extends JPanel implements ActionListener {
 
     private JMenu cityEditing, simulation;
     private JMenuItem ce1, ce2, ce3, ce4, s1, s2, s3, s4;
@@ -51,10 +53,10 @@ public class mainFrame extends JPanel {
 
         bottomPanelLeft.add(bottomLabel1, BorderLayout.WEST);
         bottomPanelRight.add(bottomLabel2, BorderLayout.EAST);
-        add(bottomPanelLeft, BorderLayout.SOUTH);
-        add(bottomPanelRight, BorderLayout.SOUTH);
         menuBar.add(cityEditing);
         menuBar.add(simulation);
+        mainFrame.add(bottomPanelLeft);
+        mainFrame.add(bottomPanelRight);
         mainFrame.add(this);
         mainFrame.setJMenuBar(menuBar);
         mainFrame.setSize(1920, 1080);
@@ -64,5 +66,18 @@ public class mainFrame extends JPanel {
         mainFrame.setLocationRelativeTo(null);
         revalidate();
         repaint();
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent actionEvent) {
+        ce1.addActionListener(this);
+        ce2.addActionListener(this);
+        ce3.addActionListener(this);
+        ce4.addActionListener(this);
+
+        s1.addActionListener(this);
+        s2.addActionListener(this);
+        s3.addActionListener(this);
+        s4.addActionListener(this);
     }
 }

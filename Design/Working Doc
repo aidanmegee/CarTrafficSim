@@ -190,3 +190,12 @@ Model.Car class now draws a car or "itself". Model.Road class now draws a road w
 Need to find a way to move the drawn car on a road in main.
 
 Added a final int named SCALE to scale up pixel size for drawing each objects, only currently in Model.Car class and Model.Road class.
+
+Separated code into Model/View/Control directories for personal readability to know where certain parts of my code are instead of being
+in one big directory. Moved majority of code from simulation back to road and let simulation handle the simulation code like
+addRoad, traffic light and vehicle along with change road.
+
+Added a mainFrame class that will hold all of the GUI components then instantiate mainFrame in main.
+
+Adding actionListeners for the menuItems in the menuBar that will be used for setting the rates of certain variables in the simulation.
+
