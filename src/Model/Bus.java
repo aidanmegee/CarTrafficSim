@@ -1,5 +1,7 @@
 package Model;
 
+import java.awt.*;
+
 public class Bus extends Vehicle {
 
     /**
@@ -13,6 +15,12 @@ public class Bus extends Vehicle {
 
     public Bus(int speed, int positionOnRoad, int id, int vehicleBreadth) {
         super(speed, positionOnRoad, id, vehicleBreadth);
+    }
+
+    public void paintComponent(Graphics busGraphics) {
+        super.paintComponent(busGraphics);
+        busGraphics.setColor(Color.YELLOW);
+        busGraphics.fillRect(this.positionOnRoad, 10, this.vehicleBreadth, (int) this.vehicleLength);
     }
 
     @Override

@@ -1,5 +1,7 @@
 package Model;
 
+import java.awt.*;
+
 public abstract class Vehicle { //Model.Car class
 
     //variables for Model.Vehicle class inherited by it's sub classes Model.Car, Model.Motorbike and Model.Bus
@@ -22,6 +24,11 @@ public abstract class Vehicle { //Model.Car class
         this.positionOnRoad = positionOnRoad;
         this.id = id;
         this.vehicleBreadth = vehicleBreadth;
+    }
+
+    public void paintComponent(Graphics vehicleGraphics) {
+        vehicleGraphics.setColor(Color.CYAN);
+        vehicleGraphics.fillRect(positionOnRoad, 10, (int) getVehicleBreadth(), (int) vehicleLength);
     }
 
     /*setters and getters for car class*/
