@@ -201,3 +201,5 @@ Adding actionListeners for the menuItems in the menuBar that will be used for se
 
 Working on making GUI components look neat along with action listeners, then move on to drawing objects
 in the classes based on what is added to the simulation.
+
+Finished drawing rectangles for vehicle subclasses. Working on getting the GUI able to add roads etc. for the simulation.

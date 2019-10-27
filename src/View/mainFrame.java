@@ -1,6 +1,7 @@
 package View;
 
 import javax.swing.*;
+import javax.swing.border.MatteBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -68,25 +69,30 @@ public class mainFrame extends JPanel {
             //popup input box that sets the update rate/speed
         });
 
-        JPanel cityViewPanel = new JPanel();
-        JPanel bottomPanelLeft = new JPanel();
-        JPanel bottomPanelRight = new JPanel();
+        JPanel cityViewPanel = new JPanel(new GridLayout(10, 10, -1, -1));
+        cityViewPanel.setBorder(BorderFactory.createEmptyBorder(2, 2, 2, 2));
+
+        for (int i = 0; i < (10*10); i++) {
+            final JLabel label = new JLabel("Grid" + i);
+            label.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+            cityViewPanel.add(label);
+        }
+        add(cityViewPanel);
+
+        JPanel bottomPanel = new JPanel();
         JLabel bottomLabel1 = new JLabel();
         JLabel bottomLabel2 = new JLabel();
         bottomLabel1.setText("Mode: ");
         bottomLabel2.setText("Status: ");
 
-        cityViewPanel.setLayout(new GridLayout(10, 10));
-        bottomPanelLeft.setLayout(new BorderLayout());
         bottomLabel1.setLayout(new BorderLayout());
         bottomLabel2.setLayout(new BorderLayout());
 
-        bottomPanelLeft.add(bottomLabel1, BorderLayout.WEST);
-        bottomPanelRight.add(bottomLabel2, BorderLayout.EAST);
+        bottomPanel.add(bottomLabel1, BorderLayout.WEST);
+        bottomPanel.add(bottomLabel2, BorderLayout.EAST);
         menuBar.add(cityEditing);
         menuBar.add(simulation);
-        mainFrame.add(bottomPanelLeft);
-        mainFrame.add(bottomPanelRight);
+        mainFrame.add(bottomPanel, BorderLayout.SOUTH);
         mainFrame.add(this);
         mainFrame.setJMenuBar(menuBar);
         mainFrame.setSize(1920, 1080);
