@@ -1,10 +1,9 @@
 package View;
 
+import Model.*;
+
 import javax.swing.*;
-import javax.swing.border.MatteBorder;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class mainFrame extends JPanel {
 
@@ -70,13 +69,13 @@ public class mainFrame extends JPanel {
         });
 
         JPanel cityViewPanel = new JPanel(new GridLayout(10, 10, -1, -1));
-        cityViewPanel.setBorder(BorderFactory.createEmptyBorder(2, 2, 2, 2));
-
-        for (int i = 0; i < (10*10); i++) {
-            final JLabel label = new JLabel("Grid" + i);
-            label.setBorder(BorderFactory.createLineBorder(Color.BLACK));
-            cityViewPanel.add(label);
-        }
+//        cityViewPanel.setBorder(BorderFactory.createEmptyBorder(2, 2, 2, 2));
+//
+//        for (int i = 0; i < (10 * 10); i++) {
+//            final JLabel label = new JLabel("Grid" + i);
+//            label.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+//            cityViewPanel.add(label);
+//        }
         add(cityViewPanel);
 
         JPanel bottomPanel = new JPanel();
@@ -100,8 +99,10 @@ public class mainFrame extends JPanel {
 
         mainFrame.pack();
         mainFrame.setLocationRelativeTo(null);
-        revalidate();
-        repaint();
+
+        mainFrame.setPreferredSize(new Dimension(600, 400));
+        mainFrame.setBackground(Color.DARK_GRAY);
+
     }
 
 }

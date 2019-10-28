@@ -19,8 +19,7 @@ public class Car extends Vehicle {
         super(speed, positionOnRoad, id, vehicleBreadth);
     }
 
-    public void paintComponent(Graphics carGraphics) {
-        super.paintComponent(carGraphics);
+    public void draw(Graphics carGraphics) {
         carGraphics.setColor(Color.CYAN);
         carGraphics.fillRect(this.positionOnRoad, 10, this.vehicleBreadth, (int) this.vehicleLength);
     }

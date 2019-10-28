@@ -17,8 +17,7 @@ public class Bus extends Vehicle {
         super(speed, positionOnRoad, id, vehicleBreadth);
     }
 
-    public void paintComponent(Graphics busGraphics) {
-        super.paintComponent(busGraphics);
+    public void draw(Graphics busGraphics) {
         busGraphics.setColor(Color.YELLOW);
         busGraphics.fillRect(this.positionOnRoad, 10, this.vehicleBreadth, (int) this.vehicleLength);
     }

@@ -2,26 +2,21 @@ package View;
 
 import Model.*;
 
+import java.awt.*;
 import java.util.Random;
 
-public class Simulation {
+public class Simulation extends mainFrame {
 
-    Road road = new Road(1,100, 20);
-    Vehicle car = new Car(1, 0, 1, 9);
-    Vehicle motorbike = new Motorbike(1, 0, 2, 9);
-    Vehicle bus = new Bus(1, 0, 3, 9);
+    private Road road;
+    private Car car;
+    private Motorbike motorbike;
+    private Bus bus;
 
-    //Constructor holds GUI components
     public void addStraightRoad() { //add a road object to simulation //TODO possibly need two methods to add different intersection types
         for (Road road : road.connectingRoads) {
             road.connectingRoads.add(road);
             road.setRoadLength(road.getRoadLength());
         }
-    }
-
-    void setModel(Road road, Car car) {
-        this.road = road;
-        this.car = car;
     }
 
     public void addVehicle() { //adds a random vehicle index 0, 1, 2 to the road
@@ -58,6 +53,31 @@ public class Simulation {
                 }
             }
         }
+    }
+
+    @Override
+    public void paint(Graphics g) {
+        super.paint(g);
+        road.draw(g);
+        car.draw(g);
+        motorbike.draw(g);
+        bus.draw(g);
+    }
+
+    public void setRoad(Road road) {
+        this.road = road;
+    }
+
+    public void setCar(Car car) {
+        this.car = car;
+    }
+
+    public void setMotorbike(Motorbike motorbike) {
+        this.motorbike = motorbike;
+    }
+
+    public void setBus(Bus bus) {
+        this.bus = bus;
     }
 
 }

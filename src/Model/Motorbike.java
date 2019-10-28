@@ -16,8 +16,7 @@ public class Motorbike extends Vehicle {
         super(speed, positionOnRoad, id, vehicleBreadth);
     }
 
-    public void paintComponent(Graphics motorbikeGraphics) {
-        super.paintComponent(motorbikeGraphics);
+    public void draw(Graphics motorbikeGraphics) {
         motorbikeGraphics.setColor(Color.YELLOW);
         motorbikeGraphics.fillRect(this.positionOnRoad, 10, this.vehicleBreadth, (int) this.vehicleLength);
     }
