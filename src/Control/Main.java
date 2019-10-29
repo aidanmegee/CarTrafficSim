@@ -1,6 +1,5 @@
 package Control;
 
-import Model.*;
 import View.Simulation;
 import View.mainFrame;
 

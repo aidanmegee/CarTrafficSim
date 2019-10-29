@@ -26,12 +26,15 @@ public class Simulation extends mainFrame {
         switch (randomVehicle) {
             case 0:
                 road.currentVehicles.add(new Car(1, 0, 1, 2));
+                setCar(car);
                 break;
             case 1:
                 road.currentVehicles.add(new Motorbike(1, 0, 2, 2));
+                setMotorbike(motorbike);
                 break;
             case 2:
                 road.currentVehicles.add(new Bus(1, 0, 3, 2));
+                setBus(bus);
                 break;
         }
     }
@@ -73,6 +76,7 @@ public class Simulation extends mainFrame {
     public void paint(Graphics g) {
         super.paint(g);
         road.draw(g);
+
     }
 
     public void setRoad(Road road) {
