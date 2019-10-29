@@ -1,6 +1,7 @@
 package Control;
 
 import View.Simulation;
+import View.cityEditing;
 import View.mainFrame;
 
 import javax.swing.*;
@@ -14,6 +15,10 @@ public class Main {
 
         simulation.setCreateNewCity(newCityEvent -> {
             simulation.removeAll();
+            mainFrame.removeAll();
+            mainFrame.add(new cityEditing());
+            mainFrame.revalidate();
+            mainFrame.repaint();
             simulation.revalidate();
             simulation.repaint();
             //creates new city from scratch
@@ -38,6 +43,7 @@ public class Main {
             //essentially starts the simulation
         });
         simulation.setStopSimulation(stopSimulatorEvent -> {
+            System.exit(0);
             //stops simulator, **Add if a car crashed, create self made exception that closes program
         });
         simulation.setVehicleSpawnRate(vehicleSpawnRateEvent -> {
