@@ -203,3 +203,6 @@ Working on making GUI components look neat along with action listeners, then mov
 in the classes based on what is added to the simulation.
 
 Finished drawing rectangles for vehicle subclasses. Working on getting the GUI able to add roads etc. for the simulation.
+
+Action listener events to be set as methods in the mainFrame class then using lambda expressions to handle the events in the
+controller (Main).

@@ -2,6 +2,7 @@ package View;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionListener;
 
 public class mainFrame extends JPanel {
 
@@ -31,40 +32,10 @@ public class mainFrame extends JPanel {
         cityEditing.add(ce3);
         cityEditing.add(ce4);
 
-        ce1.addActionListener(newCityEvent -> {
-            //creates new city from scratch
-        });
-        ce2.addActionListener(editCityEvent -> {
-            //should allow user to load a city and then edit
-        });
-        ce3.addActionListener(openCityEvent -> {
-            //load file .csv try catch possibly
-        });
-        ce4.addActionListener(saveCityEvent -> {
-            //save file .csv
-        });
-
         simulation.add(s1);
         simulation.add(s2);
         simulation.add(s3);
         simulation.add(s4);
-
-        s1.addActionListener(updateRateEvent -> {
-            JOptionPane.showInputDialog("Enter the Update Rate");
-            //set updateRate of simulation
-            //popup box input that sets the update rate
-        });
-        s2.addActionListener(runSimulatorEvent -> {
-            //essentially starts the simulation
-        });
-        s3.addActionListener(stopSimulatorEvent -> {
-            //stops simulator, **Add if a car crashed, create self made exception that closes program
-        });
-        s4.addActionListener(vehicleSpawnRateEvent -> {
-            JOptionPane.showInputDialog("Enter Vehicle Spawn Rate");
-            //set spawn rate (use of timer method for spawn rates can change?
-            //popup input box that sets the update rate/speed
-        });
 
         JPanel cityViewPanel = new JPanel(new GridLayout(10, 10, -1, -1));
 //        cityViewPanel.setBorder(BorderFactory.createEmptyBorder(2, 2, 2, 2));
@@ -101,6 +72,38 @@ public class mainFrame extends JPanel {
         mainFrame.setPreferredSize(new Dimension(600, 400));
         mainFrame.setBackground(Color.DARK_GRAY);
 
+    }
+
+    public void setCreateNewCity(ActionListener listener) {
+        ce1.addActionListener(listener);
+    }
+
+    public void setEditCity(ActionListener listener) {
+        ce2.addActionListener(listener);
+    }
+
+    public void setOpenCity(ActionListener listener) {
+        ce3.addActionListener(listener);
+    }
+
+    public void setSaveCity(ActionListener listener) {
+        ce4.addActionListener(listener);
+    }
+
+    public void setUpdateRate(ActionListener listener) {
+        s1.addActionListener(listener);
+    }
+
+    public void setRunSimulation(ActionListener listener) {
+        s2.addActionListener(listener);
+    }
+
+    public void setStopSimulation(ActionListener listener) {
+        s3.addActionListener(listener);
+    }
+
+    public void setVehicleSpawnRate(ActionListener listener) {
+        s4.addActionListener(listener);
     }
 
 }
