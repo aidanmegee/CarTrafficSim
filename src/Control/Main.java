@@ -13,6 +13,9 @@ public class Main {
         simulation.startTraffic();
 
         simulation.setCreateNewCity(newCityEvent -> {
+            simulation.removeAll();
+            simulation.revalidate();
+            simulation.repaint();
             //creates new city from scratch
         });
         simulation.setEditCity(editCityEvent -> {

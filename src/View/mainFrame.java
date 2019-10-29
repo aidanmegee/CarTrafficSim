@@ -37,14 +37,13 @@ public class mainFrame extends JPanel {
         simulation.add(s3);
         simulation.add(s4);
 
-        JPanel cityViewPanel = new JPanel(new GridLayout(10, 10, -1, -1));
-//        cityViewPanel.setBorder(BorderFactory.createEmptyBorder(2, 2, 2, 2));
-//
-//        for (int i = 0; i < (10 * 10); i++) {
-//            final JLabel label = new JLabel("Grid" + i);
-//            label.setBorder(BorderFactory.createLineBorder(Color.BLACK));
-//            cityViewPanel.add(label);
-//        }
+        JPanel cityViewPanel = new JPanel(new GridLayout(10, 10));
+        cityViewPanel.setBorder(BorderFactory.createEmptyBorder(2, 2, 2, 2));
+        for (int i = 0; i < (10 * 10); i++) {
+            final JLabel label = new JLabel();
+            label.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+            cityViewPanel.add(label);
+        }
         add(cityViewPanel);
 
         JPanel bottomPanel = new JPanel();

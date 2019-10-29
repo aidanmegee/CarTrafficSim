@@ -12,6 +12,7 @@ public class Simulation extends mainFrame {
     private Motorbike motorbike;
     private Bus bus;
     Road road = new Road(1, 100, 25);
+    TrafficLight trafficLight = new TrafficLight(99);
 
     public void addStraightRoad() { //add a road object to simulation //TODO possibly need two methods to add different intersection types
         road.connectingRoads.add(road);
@@ -40,9 +41,8 @@ public class Simulation extends mainFrame {
     }
 
     public void addTrafficLight() {
+        road.trafficLights.add(trafficLight);
         for (TrafficLight trafficLight : road.trafficLights) {
-            //implement scanner to determine if user adds a traffic light
-            road.trafficLights.add(trafficLight);
             trafficLight.setLightPositionOnRoad(trafficLight.getLightPositionOnRoad());
         }
     }
@@ -70,13 +70,6 @@ public class Simulation extends mainFrame {
         road.slowVehicle();
         road.removeVehicle();
         changeRoad();
-    }
-
-    @Override
-    public void paint(Graphics g) {
-        super.paint(g);
-        road.draw(g);
-
     }
 
     public void setRoad(Road road) {
