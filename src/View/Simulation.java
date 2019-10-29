@@ -1,20 +1,21 @@
 package View;
 
 import Model.*;
+import Model.Road;
 
 import java.awt.*;
 import java.util.Random;
 
 public class Simulation extends mainFrame {
 
-    private Road road;
     private Car car;
     private Motorbike motorbike;
     private Bus bus;
+    Road road = new Road(1, 100, 25);
 
     public void addStraightRoad() { //add a road object to simulation //TODO possibly need two methods to add different intersection types
+        road.connectingRoads.add(road);
         for (Road road : road.connectingRoads) {
-            road.connectingRoads.add(road);
             road.setRoadLength(road.getRoadLength());
         }
     }
@@ -55,13 +56,23 @@ public class Simulation extends mainFrame {
         }
     }
 
+    public void startTraffic() { //adds initial objects for now, should be in main for user to control what gets added
+        addStraightRoad();
+        addTrafficLight();
+        addVehicle();
+    }
+
+    public void updateView() {
+        road.moveVehicle();
+        road.slowVehicle();
+        road.removeVehicle();
+        changeRoad();
+    }
+
     @Override
     public void paint(Graphics g) {
         super.paint(g);
         road.draw(g);
-        car.draw(g);
-        motorbike.draw(g);
-        bus.draw(g);
     }
 
     public void setRoad(Road road) {
