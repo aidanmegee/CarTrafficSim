@@ -2,36 +2,35 @@ package Control;
 
 import Model.Road;
 import View.Simulation;
-import View.cityEditing;
 import View.mainFrame;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class Main {
 
     public static void main(String[] args) {
         mainFrame mainFrame = new mainFrame();
-        cityEditing cityEditing = new cityEditing();
         Simulation simulation = new Simulation();
         simulation.startTraffic();
 
         simulation.setCreateNewCity(newCityEvent -> {
             simulation.removeAll();
             mainFrame.removeAll();
-            mainFrame.add(cityEditing);
-            cityEditing.setVisible(true);
             mainFrame.revalidate();
             mainFrame.repaint();
+            JPanel cityEditingPanel = new JPanel(new GridLayout(10, 10));
+            JPanel sidePanel = new JPanel();
+            JButton addRoad = new JButton("Add a Road"); //simulation can only add straight roads at the moment.
 
-            cityEditing.setAddRoad(addRoadEvent -> {
-                Road road = new Road(1, 100, 20);
-                simulation.addStraightRoad();
-                simulation.addTrafficLight();
-                System.out.println();
-            });
+            sidePanel.setLayout(new BorderLayout());
+            sidePanel.add(addRoad, BorderLayout.NORTH);
 
-            //creates new city from scratch
+            mainFrame.add(cityEditingPanel, BorderLayout.EAST);
+            mainFrame.add(sidePanel, BorderLayout.WEST);
         });
+
+        //creates new city from scratch
         simulation.setEditCity(editCityEvent -> {
             //should allow user to load a city and then edit
         });

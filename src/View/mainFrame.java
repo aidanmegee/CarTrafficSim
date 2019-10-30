@@ -2,12 +2,14 @@ package View;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class mainFrame extends JPanel {
 
     private JMenu cityEditing, simulation;
     private JMenuItem ce1, ce2, ce3, ce4, s1, s2, s3, s4;
+    private JButton addRoad;
 
     public mainFrame() {
 
@@ -47,16 +49,18 @@ public class mainFrame extends JPanel {
         add(cityViewPanel);
 
         JPanel bottomPanel = new JPanel();
-        JLabel bottomLabel1 = new JLabel();
-        JLabel bottomLabel2 = new JLabel();
-        bottomLabel1.setText("Mode: ");
-        bottomLabel2.setText("Status: ");
+        JLabel modeLabel = new JLabel();
+        JLabel modeLabel1 = new JLabel();
+        JLabel statusLabel = new JLabel(); //set label based on mode clicked
+        JLabel statusLabel1 = new JLabel();
+        modeLabel.setText("Mode: ");
+        statusLabel.setText("Status: ");
 
-        bottomLabel1.setLayout(new BorderLayout());
-        bottomLabel2.setLayout(new BorderLayout());
+        modeLabel.setLayout(new BorderLayout());
+        statusLabel.setLayout(new BorderLayout());
 
-        bottomPanel.add(bottomLabel1, BorderLayout.WEST);
-        bottomPanel.add(bottomLabel2, BorderLayout.EAST);
+        bottomPanel.add(modeLabel, BorderLayout.WEST);
+        bottomPanel.add(statusLabel, BorderLayout.EAST);
         menuBar.add(cityEditing);
         menuBar.add(simulation);
         mainFrame.add(bottomPanel, BorderLayout.SOUTH);
@@ -105,4 +109,7 @@ public class mainFrame extends JPanel {
         s4.addActionListener(listener);
     }
 
+    public void setAddRoad(ActionListener listener) {
+        addRoad.addActionListener(listener);
+    }
 }
