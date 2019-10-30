@@ -11,27 +11,25 @@ public class Main {
 
     public static void main(String[] args) {
         mainFrame mainFrame = new mainFrame();
+        cityEditing cityEditing = new cityEditing();
         Simulation simulation = new Simulation();
-        Road road = new Road(1, 100, 20);
         simulation.startTraffic();
 
         simulation.setCreateNewCity(newCityEvent -> {
             simulation.removeAll();
             mainFrame.removeAll();
+            mainFrame.add(cityEditing);
+            cityEditing.setVisible(true);
             mainFrame.revalidate();
             mainFrame.repaint();
-            cityEditing cityEditing = new cityEditing();
 
             cityEditing.setAddRoad(addRoadEvent -> {
+                Road road = new Road(1, 100, 20);
                 simulation.addStraightRoad();
-            });
-            cityEditing.setAddTrafficLight(addTrafficLightEvent -> {
                 simulation.addTrafficLight();
+                System.out.println();
             });
-            cityEditing.setAddVehicle(addVehicleEvent -> {
-                simulation.addVehicle();
-                System.out.println(road.currentVehicles);
-            });
+
             //creates new city from scratch
         });
         simulation.setEditCity(editCityEvent -> {
