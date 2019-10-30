@@ -1,5 +1,6 @@
 package Control;
 
+import Model.Road;
 import View.Simulation;
 import View.cityEditing;
 import View.mainFrame;
@@ -11,16 +12,26 @@ public class Main {
     public static void main(String[] args) {
         mainFrame mainFrame = new mainFrame();
         Simulation simulation = new Simulation();
+        Road road = new Road(1, 100, 20);
         simulation.startTraffic();
 
         simulation.setCreateNewCity(newCityEvent -> {
             simulation.removeAll();
             mainFrame.removeAll();
-            mainFrame.add(new cityEditing());
             mainFrame.revalidate();
             mainFrame.repaint();
-            simulation.revalidate();
-            simulation.repaint();
+            cityEditing cityEditing = new cityEditing();
+
+            cityEditing.setAddRoad(addRoadEvent -> {
+                simulation.addStraightRoad();
+            });
+            cityEditing.setAddTrafficLight(addTrafficLightEvent -> {
+                simulation.addTrafficLight();
+            });
+            cityEditing.setAddVehicle(addVehicleEvent -> {
+                simulation.addVehicle();
+                System.out.println(road.currentVehicles);
+            });
             //creates new city from scratch
         });
         simulation.setEditCity(editCityEvent -> {
