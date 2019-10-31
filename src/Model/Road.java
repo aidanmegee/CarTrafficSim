@@ -24,9 +24,11 @@ public class Road { //Model.Road class
         this.roadWidth = 10;
     }
 
-    public void draw(Graphics roadGraphics) {
+    public void drawRoad(Graphics roadGraphics) {
+        int startX = 0;
+        int startY = 0;
         roadGraphics.setColor(Color.BLACK);
-        roadGraphics.fillRect(roadLength, roadLength, (roadLength) * SCALE, (roadWidth) * SCALE);
+        roadGraphics.fillRect(startX, startY, (roadLength) * SCALE, (roadWidth) * SCALE);
     }
 
     public void removeVehicle() { //removes vehicle from road if the vehicles position is equal to the road length and there are no new roads.

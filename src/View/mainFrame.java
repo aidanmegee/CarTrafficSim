@@ -1,8 +1,10 @@
 package View;
 
+import Model.Car;
+import Model.Road;
+
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class mainFrame extends JPanel {
@@ -10,6 +12,8 @@ public class mainFrame extends JPanel {
     private JMenu cityEditing, simulation;
     private JMenuItem ce1, ce2, ce3, ce4, s1, s2, s3, s4;
     private JLabel modeLabel, statusLabel, modeLabel1, statusLabel1;
+    private Road startRoad;
+    private Car firstCar;
 
     public mainFrame() {
 
@@ -65,6 +69,24 @@ public class mainFrame extends JPanel {
         mainFrame.setPreferredSize(new Dimension(600, 400));
         mainFrame.setBackground(Color.DARK_GRAY);
 
+    }
+
+    @Override
+    public void paint(Graphics g) {
+        Road startRoad = new Road(1, 10, 5);
+        Car firstCar = new Car(2, 0, 1, 2);
+        super.paint(g);
+        startRoad.drawRoad(g);
+        firstCar.drawCar(g);
+
+    }
+
+    public void setModel(Road startRoad) {
+        this.startRoad = startRoad;
+    }
+
+    public void setModel(Car firstCar) {
+        this.firstCar = firstCar;
     }
 
     public void setCreateNewCity(ActionListener listener) {

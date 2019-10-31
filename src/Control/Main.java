@@ -1,5 +1,7 @@
 package Control;
 
+import Model.Car;
+import Model.Road;
 import View.Simulation;
 import View.mainFrame;
 
@@ -14,6 +16,8 @@ public class Main {
     public static void main(String[] args) {
         mainFrame mainFrame = new mainFrame();
         Simulation simulation = new Simulation();
+        Road road = new Road(1, 100, 20);
+        Car car = new Car(1, 0, 1, 2);
 
         mainFrame.setCreateNewCity(newCityEvent -> {
             mainFrame.removeAll();
@@ -25,6 +29,8 @@ public class Main {
             JButton addRoad = new JButton("Add a Road"); //simulation can only add straight roads at the moment.
             addRoad.addActionListener(addRoadEvent -> {
                 simulation.addStraightRoad();
+                mainFrame.setModel(road);
+                mainFrame.setModel(car);
                 simulation.addTrafficLight();
             });
             sidePanel.setLayout(new BorderLayout());

@@ -176,9 +176,6 @@ checked the getter and setter methods are working as intended using different va
 Added test to check that the moveVehicle() method changes the vehicles position if the position is less than the road length and
 the speed is at least 1.
 
-Added changeRoad() method to traffic light class so the method can check if the lights are green, orange or red then change the road when the position of a vehicle is equal to the road length then it sets the number of the new road
-and sets the position of the vehicle on that road to 0 and its road length to 30.
-
 Removed all code from Traffic light class due to previously having a boolean array to check if the lights were green or red
 was extremely unreadable and a bad coding practice. Starting from scratch I will use enums to check the colour of the traffic lights
 then determine if vehicles will move to connected roads after traffic lights are green or stay on a road if they're orange/red.

@@ -19,9 +19,11 @@ public class Car extends Vehicle {
         super(speed, positionOnRoad, id, vehicleBreadth);
     }
 
-    public void draw(Graphics carGraphics) {
+    public void drawCar(Graphics carGraphics) {
+        int carX = 0;
+        int carY = 3;
         carGraphics.setColor(Color.CYAN);
-        carGraphics.fillRect(this.positionOnRoad, 10, this.vehicleBreadth, (int) this.vehicleLength);
+        carGraphics.fillRect(carX, carY, vehicleBreadth, (int) vehicleLength);
     }
 
     @Override
