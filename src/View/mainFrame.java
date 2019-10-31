@@ -9,6 +9,7 @@ public class mainFrame extends JPanel {
 
     private JMenu cityEditing, simulation;
     private JMenuItem ce1, ce2, ce3, ce4, s1, s2, s3, s4;
+    private JLabel modeLabel, statusLabel, modeLabel1, statusLabel1;
 
     public mainFrame() {
 
@@ -39,27 +40,17 @@ public class mainFrame extends JPanel {
         simulation.add(s4);
 
         JPanel cityViewPanel = new JPanel(new GridLayout(10, 10));
-        cityViewPanel.setBorder(BorderFactory.createEmptyBorder(2, 2, 2, 2));
-        for (int i = 0; i < (10 * 10); i++) {
-            final JLabel label = new JLabel();
-            label.setBorder(BorderFactory.createLineBorder(Color.BLACK));
-            cityViewPanel.add(label);
-        }
-        add(cityViewPanel);
-
         JPanel bottomPanel = new JPanel();
-        JLabel modeLabel = new JLabel();
-        JLabel modeLabel1 = new JLabel();
-        JLabel statusLabel = new JLabel(); //set label based on mode clicked
-        JLabel statusLabel1 = new JLabel();
-        modeLabel.setText("Mode: ");
-        statusLabel.setText("Status: ");
+        modeLabel1 = new JLabel();
+        statusLabel1 = new JLabel();
+        modeLabel = new JLabel("Mode: ");
+        statusLabel = new JLabel("Status: ");
 
-        modeLabel.setLayout(new BorderLayout());
-        statusLabel.setLayout(new BorderLayout());
-
+        this.add(cityViewPanel);
         bottomPanel.add(modeLabel, BorderLayout.WEST);
+        bottomPanel.add(modeLabel1, BorderLayout.WEST);
         bottomPanel.add(statusLabel, BorderLayout.EAST);
+        bottomPanel.add(statusLabel1, BorderLayout.EAST);
         menuBar.add(cityEditing);
         menuBar.add(simulation);
         mainFrame.add(bottomPanel, BorderLayout.SOUTH);

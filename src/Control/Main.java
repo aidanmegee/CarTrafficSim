@@ -9,6 +9,7 @@ import java.awt.*;
 public class Main {
 
     static JPanel cityEditingPanel;
+    static JButton addRoad;
 
     public static void main(String[] args) {
         mainFrame mainFrame = new mainFrame();
@@ -22,7 +23,10 @@ public class Main {
 
             JPanel sidePanel = new JPanel();
             JButton addRoad = new JButton("Add a Road"); //simulation can only add straight roads at the moment.
-
+            addRoad.addActionListener(addRoadEvent -> {
+                simulation.addStraightRoad();
+                simulation.addTrafficLight();
+            });
             sidePanel.setLayout(new BorderLayout());
             sidePanel.add(addRoad, BorderLayout.NORTH);
 
