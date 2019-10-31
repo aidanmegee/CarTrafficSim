@@ -6,7 +6,7 @@ import Model.Road;
 import java.awt.*;
 import java.util.Random;
 
-public class Simulation extends mainFrame {
+public class Simulation {
 
     private Car car;
     private Motorbike motorbike;
@@ -15,7 +15,7 @@ public class Simulation extends mainFrame {
     TrafficLight trafficLight = new TrafficLight(99);
 
     public void addStraightRoad() { //add a road object to simulation //TODO possibly need two methods to add different intersection types
-        road.connectingRoads.add(road);
+        road.connectingRoads.add(new Road(1, 100, 25));
         for (Road road : road.connectingRoads) {
             road.setRoadLength(road.getRoadLength());
         }
